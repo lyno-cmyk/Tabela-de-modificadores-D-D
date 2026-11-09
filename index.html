@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modificações para armas</title>
+<link rel="stylesheet" href="style.css"></head><body><div class="page">
+<div class="hd"><h1>Modificações para armas</h1><button class="add w" id="exp" title="Exportar mods.js (para commitar no GitHub)">⇩</button><button class="add w" id="reset" title="Restaurar padrão (descarta o que está salvo no navegador)">↺</button><button class="add" id="open" title="Adicionar" aria-label="Adicionar seção ou modificação">+</button></div>
+<div class="sub">Apenas duas modificações por arma</div>
+<div class="cols"></div></div>
+<div class="ov" id="ov"><div class="pn"><h4>Adicionar</h4>
+<label>Seção</label><select id="fs"></select>
+<label id="lns">Nome da nova seção</label><input id="fns">
+<label>Nome da modificação (opcional para nova seção)</label><input id="fn">
+<label>Preço (po)</label><input id="fp" inputmode="numeric">
+<label>Descrição (linha em branco separa parágrafos)</label><textarea id="fd"></textarea>
+<div class="bt"><button id="cx">Cancelar</button><button class="ok" id="ok">Adicionar</button></div></div></div>
+<script src="weapons.js"></script><script src="mods.js"></script><script src="script.js"></script></body></html>

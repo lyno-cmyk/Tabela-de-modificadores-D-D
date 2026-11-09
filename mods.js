@@ -1,6 +1,4 @@
-// Edite este arquivo para alterar seções e modificações (n=nome, p=preço, d=descrição, a=arcana, k=armas destacadas).
-// Depois de editar, AUMENTE MODS_VERSION: assim os navegadores descartam a cópia antiga salva e carregam a nova.
-window.MODS_VERSION = 2;
+window.MODS_VERSION = 3;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -31,13 +29,6 @@ window.MODS = [
     "p": "75 po",
     "d": "A arma recebe a propriedade Versátil.\n\nQuando empunhada com as duas mãos, seu dado de dano aumenta em uma categoria (d4 para d6, d6 para d8).\n\n* Só pode ser aplicada a armas que não possuam a propriedade Pesada ou Duas Mãos e cujo dado de dano seja d4, d6 ou d8.",
     "a": false,
-    "k": []
-   },
-   {
-    "n": "Benção prismática",
-    "p": "800po",
-    "d": "Com uma ação bônus, você escolhe um dos 5 elementos:\n- Fogo: combustão\n- Gelo:  -3m de movimento; não acumula\n- Ácido: -2 de CA até o inicio do próximo turno\n- Elétrico: O alvo não pode fazer reações por 1 turno\n- Veneno: Fica com a condição envenenando até o final do próximo turno.\n\nEm seguida, ao realizar um ataque você causa dano equivalente ao dado de dano da arma, por exemplo um machado grande ganha 1d12 + 1d12 elemental.\n\nVocê pode trocar o elemento da arma com uma ação bônus.\n\nA benção prismática dura até você acertar um ataque e se dissipa em 1 hora se não utilizado.",
-    "a": true,
     "k": []
    }
   ]
@@ -210,6 +201,13 @@ window.MODS = [
     "n": "Selo da sorte",
     "p": "500po",
     "d": "Ao tirar falha crítica no dado de ataque, você pode rolar esse dado uma outra vez.",
+    "a": true,
+    "k": []
+   },
+   {
+    "n": "Benção prismática",
+    "p": "800po",
+    "d": "Com uma ação bônus, você escolhe um dos 5 elementos:\n- Fogo: combustão\n- Gelo:  -3m de movimento; não acumula\n- Ácido: -2 de CA até o inicio do próximo turno\n- Elétrico: O alvo não pode fazer reações por 1 turno\n- Veneno: Fica com a condição envenenando até o final do próximo turno.\n\nEm seguida, ao realizar um ataque você causa dano equivalente ao dado de dano da arma, por exemplo um machado grande ganha 1d12 + 1d12 elemental.\n\nVocê pode trocar o elemento da arma com uma ação bônus.\n\nA benção prismática dura até você acertar um ataque e se dissipa em 1 hora se não utilizado.",
     "a": true,
     "k": []
    }

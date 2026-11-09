@@ -41,7 +41,9 @@ window.MODS = [
     "p": "100 po",
     "d": "Com uma ação bônus, você envenena a próxima munição disparada por essa arma. A munição envenenada utiliza os efeitos e as propriedades do item **Veneno Básico**.",
     "a": true,
-    "k": []
+    "k": [
+     "Zarabatana"
+    ]
    }
   ]
  },
@@ -101,7 +103,15 @@ window.MODS = [
  },
  {
   "t": "Armas marciais à distância",
-  "m": []
+  "m": [
+   {
+    "n": "Cano duplo",
+    "p": "200 po",
+    "d": "A arma é modificada para comportar duas munições simultaneamente.\n\nÀ sua escolha, você pode carregar duas munições no cano. Ao fazê-lo, suas jogadas de ataque com essa arma sofrem uma penalidade de -2, mas você faz mais 1 ataque adicional.\n\n* Somente em armas de pólvora",
+    "a": false,
+    "k": []
+   }
+  ]
  },
  {
   "t": "Armas corpo a corpo em geral",
@@ -221,6 +231,20 @@ window.MODS = [
     "p": "300 po",
     "d": "**Disparo Congelante.** Com uma ação bônus, você imbui suas munições com energia gélida. Ao serem disparadas por essa arma, elas causam **+1d8 de dano gélido** adicional.\n\nCriaturas que receberem dano gélido desses disparos têm seu deslocamento reduzido em **3 metros**. Caso o deslocamento de uma criatura seja reduzido a 0, ela fica **Paralisada** até o início do seu próximo turno.",
     "a": true,
+    "k": []
+   },
+   {
+    "n": "Pólvora arcana",
+    "p": "150 po",
+    "d": "O dano da munição disparada agora é mágico.",
+    "a": true,
+    "k": []
+   },
+   {
+    "n": "Linha tripla",
+    "p": "200 po",
+    "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\n\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
+    "a": false,
     "k": []
    }
   ]

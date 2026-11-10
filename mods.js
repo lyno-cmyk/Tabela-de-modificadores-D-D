@@ -195,7 +195,7 @@ window.MODS = [
    },
    {
     "n": "Pacto da arma",
-    "p": "150po",
+    "p": "150 po",
     "d": "Se sua arma for jogada para longe, você pode gastar sua ação de Interagir com Objeto para fazê-la retornar à sua mão.",
     "a": true,
     "k": []
@@ -209,15 +209,22 @@ window.MODS = [
    },
    {
     "n": "Selo da sorte",
-    "p": "500po",
+    "p": "500 po",
     "d": "Ao tirar falha crítica no dado de ataque, você pode rolar esse dado uma outra vez.",
     "a": true,
     "k": []
    },
    {
     "n": "Benção prismática",
-    "p": "800po",
+    "p": "800 po",
     "d": "Com uma ação bônus, você escolhe um dos 5 elementos:\n- Fogo: combustão\n- Gelo:  -3m de movimento; não acumula\n- Ácido: -2 de CA até o inicio do próximo turno\n- Elétrico: O alvo não pode fazer reações por 1 turno\n- Veneno: Fica com a condição envenenando até o final do próximo turno.\n\nEm seguida, ao realizar um ataque você causa dano equivalente ao dado de dano da arma, por exemplo um machado grande ganha 1d12 + 1d12 elemental.\n\nVocê pode trocar o elemento da arma com uma ação bônus.\n\nA benção prismática dura até você acertar um ataque e se dissipa em 1 hora se não utilizado.",
+    "a": true,
+    "k": []
+   },
+   {
+    "n": "Perfeccionismo",
+    "p": "333 po",
+    "d": "**Perfeição**\n\nAo realizar acertos consecutivos, você acumula pontos de Perfeição.\n\nAo atingir 3 pontos de Perfeição, você pode gastá-los para executar as seguintes técnicas:\n\n- 1 ponto: Realiza um ataque extra, sofrendo uma penalidade de -3d3 na jogada de ataque.\n- 2 pontos: Realiza um ataque extra, recebendo um bônus de +3 na jogada de ataque.\n- 3 pontos: Realiza um único ataque especial, recebendo um bônus de +3d3 na jogada de ataque. Se acertar, o ataque é considerado um acerto crítico.\n\nFalha consecutiva: Caso erre dois ataques consecutivos, você deve realizar um teste de Performance (CD 15). Em caso de falha, sua arma fica tão envergonhada de você que desaparece em uma nuvem de pó, retornando apenas no início do seu próximo turno.",
     "a": true,
     "k": []
    }
@@ -245,6 +252,18 @@ window.MODS = [
     "p": "200 po",
     "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\n\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
     "a": false,
+    "k": []
+   }
+  ]
+ },
+ {
+  "t": "Foco arcano",
+  "m": [
+   {
+    "n": "Infusão elemental (Varia)",
+    "p": "500 po",
+    "d": "**Infusão Elemental do Foco Arcano**\n\nPropriedade especial de foco arcano\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe +1 nas jogadas de ataque mágico de magias que causam dano de fogo.\n\nO raio da magia Bola de Fogo aumenta em 1,5 metro.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia Raio de Bruxa pode se conectar a até 2 criaturas adicionais. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar todas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em 1,5 metro até o final do turno. Esse efeito é acumulável.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com tripla vantagem.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando 4d6 pontos de vida + seu nível atual.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível).\nEm caso de falha a criatura fica amendrontada até o fim do seu próximo turno.\n\nLimitação. Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
+    "a": true,
     "k": []
    }
   ]

@@ -1,4 +1,4 @@
-window.MODS_VERSION = 3;
+window.MODS_VERSION = 4;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -29,6 +29,13 @@ window.MODS = [
     "p": "75 po",
     "d": "A arma recebe a propriedade Versátil.\n\nQuando empunhada com as duas mãos, seu dado de dano aumenta em uma categoria (d4 para d6, d6 para d8).\n\n* Só pode ser aplicada a armas que não possuam a propriedade Pesada ou Duas Mãos e cujo dado de dano seja d4, d6 ou d8.",
     "a": false,
+    "k": []
+   },
+   {
+    "n": "Arma Chrono",
+    "p": "700 po",
+    "d": "Muda o tipo de Dado da Arma para CdX\n(1d6 -> Cd6, 1d8 -> Cd8, 1d10 -> Cd10)\n\nAo tirar o Valor Máximo no dado CdX o Tier do Dado aumenta.\n(1d6 -> Rola o Dado -> 6 -> Aumento no Tier -> 1d8 (Dano Novo da Arma)\nAo tirar o Valor Mínimo o Inverso acontece.\n(1d6 -> 1 -> 1d4)\n\nPorém ao chegar em 12 no Cd12 o dado vira D20, e ao tirar 20 vira um D100.\n\nAlgo de especial acontece ao chegar em 100 ou 1 dependendo do Extremo atingido.",
+    "a": true,
     "k": []
    }
   ]

@@ -1,16 +1,52 @@
-// Edite este arquivo para alterar seções e modificações (n=nome, p=preço, d=descrição, a=arcana, k=ajustes manuais de compatibilidade {"Arma": true|false}).
-// Depois de editar, AUMENTE MODS_VERSION: assim os navegadores descartam a cópia antiga salva e carregam a nova.
-window.MODS_VERSION = 5;
+window.MODS_VERSION = 6;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
   "m": [
    {
-    "n": "Cegar a lâmina",
-    "p": "100 po",
-    "d": "O dano de um acerto crítico passa a ser multiplicado por 3. Isso vale somente para o dado da arma.",
+    "n": "Perfuração letal",
+    "p": "50 po",
+    "d": "O dano de um acerto crítico passa a ser multiplicado por 3. Isso vale somente para o dado da arma.\n\n* Apenas para armas que dão dano perfurante",
     "a": false,
-    "k": {}
+    "k": {
+     "Cajado": false,
+     "Clava": false,
+     "Clava Grande": false,
+     "Foice": false,
+     "Maça": false,
+     "Machadinha": false,
+     "Martelo Leve": false
+    }
+   },
+   {
+    "n": "Extremidade reforçada",
+    "p": "50 po",
+    "d": "A arma ganha mais 1d4 de dano extra contundente.\n\n* apenas para armas que dão dano contundente.",
+    "a": false,
+    "k": {
+     "Martelo Leve": false,
+     "Machadinha": false,
+     "Lança": false,
+     "Foice": false,
+     "Azagaia": false,
+     "Adaga": false
+    }
+   },
+   {
+    "n": "Fio de obsidiana",
+    "p": "50 po",
+    "d": "A classe do dado de dano aumenta em 1\n\nSeu primeiro ataque no combate causa 6 de dano cortante adicional",
+    "a": false,
+    "k": {
+     "Martelo Leve": false,
+     "Maça": false,
+     "Lança": false,
+     "Clava Grande": false,
+     "Clava": false,
+     "Cajado": false,
+     "Azagaia": false,
+     "Adaga": false
+    }
    },
    {
     "n": "Empunhadura leve",
@@ -64,7 +100,9 @@ window.MODS = [
     "p": "200 po",
     "d": "É adicionado peso à arma, deixando-a desequilibrada e exigindo mais habilidade para empunhá-la adequadamente.\n\nAdiciona +1 de dano da arma.\n\n* Caso não possua pelo menos 18 em um desses atributos, sofre uma penalidade de -1d4 nas jogadas de ataque.",
     "a": false,
-    "k": {}
+    "k": {
+     "Chicote": false
+    }
    },
    {
     "n": "Empunhadura versátil",
@@ -90,7 +128,7 @@ window.MODS = [
    {
     "n": "Gancho de captura",
     "p": "150 po",
-    "d": "Ao acertar uma criatura de tamanho Grande ou menor, você pode forçá-la a realizar um teste de resistência de Força.\n\nA CD é igual a 8 + seu bônus de proficiência + seu modificador de Força.\n\nEm caso de falha, o deslocamento da criatura é reduzido em 3 metros até o fim do seu próximo turno.\n\n* Pode ser utilizado uma vez por turno.",
+    "d": "Ao acertar uma criatura de tamanho Grande ou menor, você pode forçá-la a realizar um teste de resistência de Força.\n\nA CD é igual a 8 + seu bônus de proficiência + seu modificador de Força.\n\nEm caso de falha, a criatura é agarrada pelo gancho até o fim do seu próximo turno.\n\n* Pode ser utilizado uma vez por turno.",
     "a": false,
     "k": {}
    },
@@ -104,9 +142,32 @@ window.MODS = [
    {
     "n": "Equilíbrio de duelo",
     "p": "150 po",
-    "d": "Enquanto não houver outras criaturas a até 1,5 metro de você, além do seu alvo, recebe +1 nas jogadas de ataque realizadas com essa arma.",
+    "d": "Enquanto não houver outras criaturas a até 1,5 metro de você, além do seu alvo, recebe +2 nas jogadas de ataque realizadas com essa arma.",
     "a": false,
     "k": {}
+   },
+   {
+    "n": "Quebra-muros",
+    "p": "100 po",
+    "d": "Dobro do dano contra objetos ou estruturas\n\nVantagem em ataques e + 1d6 de dano adicional contra constructos.\n\n* Somente para armas que dão dano contundente",
+    "a": false,
+    "k": {
+     "Alabarda": false,
+     "Chicote": false,
+     "Cimitarra": false,
+     "Espada Curta": false,
+     "Espada Grande": false,
+     "Espada Longa": false,
+     "Glaive": false,
+     "Lança de Montaria": false,
+     "Lança Longa": false,
+     "Maça Estrela": false,
+     "Machado de Batalha": false,
+     "Machado Grande": false,
+     "Picareta de Guerra": false,
+     "Rapieira": false,
+     "Tridente": false
+    }
    }
   ]
  },
@@ -211,15 +272,15 @@ window.MODS = [
    },
    {
     "n": "Infusão arcana",
-    "p": "150 po",
+    "p": "300 po",
     "d": "O dano da arma é convertido em dano mágico permanentemente.",
     "a": true,
     "k": {}
    },
    {
     "n": "Selo da sorte",
-    "p": "500 po",
-    "d": "Ao tirar falha crítica no dado de ataque, você pode rolar esse dado uma outra vez.",
+    "p": "300 po",
+    "d": "Uma vez por combate, ao tirar falha crítica no dado de ataque, você pode rolar esse dado uma outra vez.",
     "a": true,
     "k": {}
    },

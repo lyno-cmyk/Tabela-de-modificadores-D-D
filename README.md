@@ -15,4 +15,4 @@ Settings → Pages → Branch `main` / `(root)` → Save.
 2. **Pela página:** edite normalmente (fica salvo só no navegador), clique em ⇩ para baixar um `mods.js` novo (a versão já vem incrementada) e suba no repositório.
 3. O botão ↺ descarta o que está salvo no navegador e recarrega o `mods.js`.
 
-Campos de cada modificação: `n` nome, `p` preço, `d` descrição (linha em branco = novo parágrafo; `* ` no início = itálico; `**negrito**`), `a` arcana (true/false), `k` armas destacadas manualmente.
+Campos de cada modificação: `n` nome, `p` preço, `d` descrição (linha em branco = novo parágrafo; `* ` no início = itálico; `**negrito**`), `a` arcana (true/false), `k` ajustes manuais de compatibilidade (`{"Adaga": true, "Foice": false}`; vazio = segue as regras automáticas).

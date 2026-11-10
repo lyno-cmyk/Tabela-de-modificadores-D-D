@@ -38,6 +38,6 @@ h2{display:flex;align-items:center;gap:8px}h2 .t{flex:1}h3 .nm{margin-left:0;whi
 @media(max-width:700px){#sb{top:auto;height:45vh;left:0!important;right:0!important;width:auto;max-width:none}}
 .m{cursor:pointer}.m.sel{outline:2px solid var(--red);outline-offset:1px}.m.arc.sel{outline-color:#2e6b3a}
 #sb.on{pointer-events:auto}#sb tr{cursor:pointer}#sb tr.g{cursor:default}#sb .cb{font:inherit;font-size:10px;border:1px solid var(--red);background:var(--page);color:var(--red);cursor:pointer;padding:1px 6px;margin-right:6px}#sb .hint{margin:0 0 6px;font-size:10px;color:#4a3b2a}
-#sb tr.man{opacity:1;background:#bcd3ea!important;outline:2px solid #1f4e79;outline-offset:-2px}#sb tr.man td:first-child::before{content:"\2605 ";color:#1f4e79}
+#sb tr.man td:first-child::after{content:" \270e";color:#1f4e79;font-weight:normal}
 .add.w{width:auto;padding:0 10px;border-radius:17px;font-size:14px}
 .m p{white-space:pre-line}

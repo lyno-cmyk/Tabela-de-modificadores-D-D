@@ -302,7 +302,14 @@ window.MODS = [
    {
     "n": "Perfeccionismo",
     "p": "333 po",
-    "d": "**Perfeição**\n\nAo realizar acertos consecutivos, você acumula pontos de Perfeição.\n\nAo atingir 3 pontos de **Perfeição**, você pode gastá-los para executar as seguintes técnicas:\n\n- 1 ponto: Realiza **um ataque extra**, sofrendo uma penalidade de -3d3 na jogada de ataque.\n- 2 pontos: **Realiza um ataque extra**, recebendo um bônus de +3 na jogada de ataque.\n- 3 pontos: Realiza **um único ataque extra especial**, recebendo um bônus de +3d3 na jogada de ataque. Se acertar, o ataque é considerado um acerto crítico.\n\nAtaques extras concedidos por essa habilidade não dão pontos em caso de acerto.\n\nAo atingir 3 pontos de **Perfeição** a arma fica satisfeita com sua performance e para de se importar com acertos ou falhas consecutivas até um descanso longo.\n\nFalha consecutiva: Caso erre dois ataques consecutivos, você deve realizar um teste de Performance (CD 15). Em caso de falha, sua arma fica tão envergonhada de você que desaparece em uma nuvem de pó, retornando apenas no início do seu próximo turno.",
+    "d": "**Perfeição**\n\nAo realizar acertos consecutivos, você acumula pontos de Perfeição.\n\nAo atingir 3 pontos de **Perfeição**, você pode gastá-los para executar as seguintes técnicas:\n\n- 1 ponto: Realiza **um ataque extra**, sofrendo uma penalidade de -3d3 na jogada de ataque.\n- 2 pontos: **Realiza um ataque extra**, recebendo um bônus de +3 na jogada de ataque.\n- 3 pontos: Realiza **um único ataque extra especial**, recebendo um bônus de +3d3 na jogada de ataque. Se acertar, o ataque é considerado um acerto crítico.\n\nAtaques extras concedidos por essa habilidade não dão pontos em caso de acerto.\n\nAo atingir 3 pontos de **Perfeição** a arma fica satisfeita com sua performance e para de se importar com acertos ou falhas consecutivas até um descanso longo.\n\nFalha consecutiva: Caso erre dois ataques consecutivos, você deve realizar um teste de Atuação(CD 15). Em caso de falha, sua arma fica tão envergonhada de você que desaparece em uma nuvem de pó, retornando apenas no início do seu próximo turno.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Espírito Dançarino",
+    "p": "200 po",
+    "d": "**Espírito Dançarino.** Você imbui sua arma com um espírito dançarino, capaz de confundir seus adversários com movimentos imprevisíveis.\n\nUma vez por turno, você pode gastar uma utilização para realizar uma jogada de ataque utilizando Carisma (Atuação) no lugar do atributo normalmente utilizado. Ao fazer isso, você distrai o alvo com seus movimentos, recebendo **vantagem na jogada de ataque**.\n\n* Limitação: 2 utilizações por descanso curto.",
     "a": true,
     "k": {}
    }
@@ -314,9 +321,40 @@ window.MODS = [
    {
     "n": "Linha tripla",
     "p": "200 po",
-    "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\n\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
+    "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\nUma vez por turno você pode optar por substituir um dos seus ataques por um ataque duplo ou triplo:\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
     "a": false,
     "k": {}
+   },
+   {
+    "n": "Riser quadruplo",
+    "p": "200 po",
+    "d": "O riser do seu arco agora segura até 4 flechas de uma vez.\nUma vez por turno, você pode optar por trocar um dos seus ataques por um disparo múltiplo:\n1 flecha: ataque normal\n2 flechas: -1d2 em cada ataque\n3 flechas: -1d4 em cada ataque\n4 flechas: Desvantagem **absoluta** em todos os ataques\n\n* Disponível somente para arcos\n*Absoluto(a): Que não tem como mudar de forma alguma",
+    "a": false,
+    "k": {
+     "Funda": false,
+     "Dardo": false,
+     "Besta Leve": false,
+     "Besta de Mão": false,
+     "Besta Pesada": false,
+     "Mosquete": false,
+     "Pistola": false,
+     "Zarabatana": false
+    }
+   },
+   {
+    "n": "Linha poderosa",
+    "p": "100 po",
+    "d": "Uma vez por turno você pode optar por receber uma penalidade de -5 em um dos ataques, mas você causa + 10 de dano extra do tipo da arma nesse mesmo ataque.\n\n* Somente para bestas",
+    "a": false,
+    "k": {
+     "Funda": false,
+     "Dardo": false,
+     "Arco Curto": false,
+     "Arco Longo": false,
+     "Mosquete": false,
+     "Pistola": false,
+     "Zarabatana": false
+    }
    },
    {
     "n": "Disparos congelantes",

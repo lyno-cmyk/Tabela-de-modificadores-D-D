@@ -5,7 +5,17 @@
 <link rel="stylesheet" href="style.css"></head><body><div class="page">
 <div class="hd"><h1>Modificações para armas</h1><button class="add w" id="exp" title="Exportar mods.js (para commitar no GitHub)">⇩</button><button class="add w" id="reset" title="Restaurar padrão (descarta o que está salvo no navegador)">↺</button><button class="add" id="open" title="Adicionar" aria-label="Adicionar seção ou modificação">+</button></div>
 <div class="sub">Apenas duas modificações por arma</div>
-<div class="cols"></div></div>
+<div class="vp"><div class="cols"></div><div id="emp" hidden>Nenhum modificador encontrado.</div></div>
+<div class="sp" id="sp" role="search">
+<div class="sr"><input id="q" type="search" placeholder="Buscar no nome ou na descrição…" autocomplete="off" aria-label="Texto do modificador"><button class="ib" id="spx" title="Fechar busca" aria-label="Fechar busca">✕</button></div>
+<div class="sr seg" id="sg"><button data-v="" class="on">Todas</button><button data-v="a">Arcanas</button><button data-v="n">Não arcanas</button></div>
+<div class="sr"><input id="qw" list="wl" placeholder="Arma compatível (ex.: Espada Longa)" autocomplete="off" aria-label="Arma compatível"><datalist id="wl"></datalist></div>
+<div class="sr inf"><span id="rs"></span><span id="wn"></span><button class="cb" id="clr">Limpar</button></div>
+</div>
+<div class="ft">
+<button class="nv" id="srch" title="Pesquisar" aria-label="Pesquisar" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></button>
+<div class="pg"><button class="nv" id="prev" title="Página anterior" aria-label="Página anterior"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><span id="pgn" aria-live="polite">1 / 1</span><button class="nv" id="next" title="Próxima página" aria-label="Próxima página"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</div></div>
 <div class="ov" id="ov"><div class="pn"><h4>Adicionar</h4>
 <label>Seção</label><select id="fs"></select>
 <label id="lns">Nome da nova seção</label><input id="fns">

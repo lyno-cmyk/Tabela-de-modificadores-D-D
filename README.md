@@ -16,3 +16,7 @@ Settings → Pages → Branch `main` / `(root)` → Save.
 3. O botão ↺ descarta o que está salvo no navegador e recarrega o `mods.js`.
 
 Campos de cada modificação: `n` nome, `p` preço, `d` descrição (linha em branco = novo parágrafo; `* ` no início = itálico; `**negrito**`), `a` arcana (true/false), `k` ajustes manuais de compatibilidade (`{"Adaga": true, "Foice": false}`; vazio = segue as regras automáticas).
+
+## Navegação e busca
+- **Páginas:** o conteúdo é dividido em páginas (2 colunas no desktop, 1 no celular). Um modificador que não cabe no fim da página continua na próxima. Use as setas do rodapé, as teclas ←/→ (ou PageUp/PageDown) ou deslize no celular. Ao arrastar um modificador até a borda da página, ela vira sozinha.
+- **Busca (🔍 no rodapé):** filtra por texto (nome, preço e descrição; ignora acentos e maiúsculas, todas as palavras precisam aparecer), por arcana/não arcana e por arma compatível (digite parte do nome, ex.: `espada`; considera as regras automáticas e os ajustes manuais `k`). Os filtros se combinam. "Limpar" restaura tudo.

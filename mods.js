@@ -1,4 +1,4 @@
-window.MODS_VERSION = 8;
+window.MODS_VERSION = 9;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -402,14 +402,14 @@ window.MODS = [
   "m": [
    {
     "n": "Infusão elemental (Varia)",
-    "p": "800 po",
+    "p": "2000 po",
     "d": "**Infusão Elemental do Foco Arcano**\n\n* Propriedade especial de foco arcano.*\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe **+1 nas jogadas de ataque mágico** de magias que causam dano de fogo.\n\nO raio da magia **Bola de Fogo** aumenta em **1,5 metro**.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia **Raio de Bruxa** pode se conectar a uma criatura adicional. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar ambas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em **1,5 metro** até o final do turno. Esse efeito é acumulável até 3 vezes.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com **tripla vantagem**.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando **1d6 pontos de vida + seu nível atual**.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível). Em caso de falha, a criatura fica **Amedrontada** até o fim do seu próximo turno.\n\n**Limitação.** Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
     "a": true,
     "k": {}
    },
    {
     "n": "Imbuir Paz Eterna",
-    "p": "200 po",
+    "p": "400 po",
     "d": "Toda fonte de cura causada pelo seu símbolo sagrado terá um bônus de +1d6",
     "a": true,
     "k": {}

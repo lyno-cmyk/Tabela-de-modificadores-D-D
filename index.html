@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Modificações para armas</title>
+<title>Modificações para armas e armaduras</title>
 <link rel="stylesheet" href="style.css"></head><body><div class="page">
-<div class="hd"><h1>Modificações para armas</h1><button class="add w" id="exp" title="Exportar mods.js (para commitar no GitHub)">⇩</button><button class="add w" id="reset" title="Restaurar padrão (descarta o que está salvo no navegador)">↺</button><button class="add" id="open" title="Adicionar" aria-label="Adicionar seção ou modificação">+</button></div>
-<div class="sub">Apenas duas modificações por arma</div>
+<div class="hd"><h1>Modificações para armas e armaduras</h1><button class="add w" id="exp" title="Exportar mods.js (para commitar no GitHub)">⇩</button><button class="add w" id="reset" title="Restaurar padrão (descarta o que está salvo no navegador)">↺</button><button class="add" id="open" title="Adicionar" aria-label="Adicionar seção ou modificação">+</button></div>
+<div class="sub">Apenas duas modificações por arma ou armadura</div>
 <div class="vp"><div class="cols"></div><div id="emp" hidden>Nenhum modificador encontrado.</div></div>
 <div class="sp" id="sp" role="search">
 <div class="sr"><input id="q" type="search" placeholder="Buscar no nome ou na descrição…" autocomplete="off" aria-label="Texto do modificador"><button class="ib" id="spx" title="Fechar busca" aria-label="Fechar busca">✕</button></div>
 <div class="sr seg" id="sg"><button data-v="" class="on">Todas</button><button data-v="a">Arcanas</button><button data-v="n">Não arcanas</button></div>
-<div class="sr"><input id="qw" list="wl" placeholder="Arma compatível (ex.: Espada Longa)" autocomplete="off" aria-label="Arma compatível"><datalist id="wl"></datalist></div>
+<div class="sr"><input id="qw" list="wl" placeholder="Arma ou armadura compatível (ex.: Espada Longa)" autocomplete="off" aria-label="Arma ou armadura compatível"><datalist id="wl"></datalist></div>
 <div class="sr inf"><span id="rs"></span><span id="wn"></span><button class="cb" id="clr">Limpar</button></div>
 </div>
 <div class="ft">
@@ -23,4 +23,4 @@
 <label>Preço (po)</label><input id="fp" inputmode="numeric">
 <label>Descrição (linha em branco separa parágrafos)</label><textarea id="fd"></textarea>
 <div class="bt"><button id="cx">Cancelar</button><button class="ok" id="ok">Adicionar</button></div></div></div>
-<script src="weapons.js"></script><script src="mods.js"></script><script src="script.js"></script></body></html>
+<script src="weapons.js"></script><script src="armors.js"></script><script src="mods.js"></script><script src="script.js"></script></body></html>

@@ -1,4 +1,4 @@
-window.MODS_VERSION = 9;
+window.MODS_VERSION = 10;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -418,6 +418,105 @@ window.MODS = [
     "n": "Loucura à beira da morte",
     "p": "300 po",
     "d": "**Infusão de Fé.** Suas magias de cura agora podem ter seus dados de cura dobrados, mas isso envolve um risco.\n\nUma vez por turno, ao conjurar uma magia de cura, você deve realizar um teste de perícia de Religião. A DT é igual a **12 + o nível da magia conjurada**. Em caso de sucesso, você dobra a quantidade de dados de cura rolados pela magia.\n\nCaso falhe no teste, a magia de cura é completamente anulada. Entretanto, se falhar por 5 pontos ou menos, a magia é convertida em dano necrótico.\n\n* Limitação: Disponível apenas para símbolos sagrados.\n\n* Limitação: Permite apenas uma única instância de cura por turno.",
+    "a": true,
+    "k": {}
+   }
+  ]
+ },
+ {
+  "t": "Armaduras leves",
+  "m": [
+   {
+    "n": "Costuras silenciosas",
+    "p": "100 po",
+    "d": "Forros acolchoados nas juntas e fivelas abafadas deixam a armadura quase muda.\n\nVocê recebe **+2 em testes de Destreza (Furtividade)**. Se a armadura impõe Desvantagem nesses testes, essa Desvantagem é removida.\n\n* Pode ser aplicada a qualquer armadura leve.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Reflexos de esquiva",
+    "p": "200 po",
+    "d": "Os painéis flexíveis acompanham cada movimento seu, permitindo desvios de última hora.\n\nUma vez por descanso curto ou longo, quando uma criatura que você possa ver atacar você, você pode usar sua reação para receber **+3 na CA** contra esse ataque (podendo fazê-lo errar) e se mover até **3 metros** sem provocar ataques de oportunidade.\n\n* Não pode ser usada se você estiver Incapacitado ou com deslocamento 0.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Trama de sussurros",
+    "p": "400 po",
+    "d": "Fios encantados tecidos na armadura transformam energia mágica em agilidade.\n\nSempre que você conjurar uma magia de **nível 1 ou superior**, até o fim do seu turno seu deslocamento aumenta em **3 metros** e as criaturas têm **Desvantagem** em ataques de oportunidade contra você.\n\n* Os efeitos não acumulam entre si.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Passo de névoa",
+    "p": "600 po",
+    "d": "Com uma ação bônus, você se dissolve em névoa e reaparece em um espaço desocupado que possa ver a até **9 metros**.\n\nAté o fim do seu próximo turno, você tem **Vantagem em testes de Destreza (Furtividade)** e em **salvaguardas de Destreza**.\n\n* Limitação: 1 utilização por descanso curto ou longo.",
+    "a": true,
+    "k": {}
+   }
+  ]
+ },
+ {
+  "t": "Armaduras médias",
+  "m": [
+   {
+    "n": "Articulações reforçadas",
+    "p": "300 po",
+    "d": "Placas extras protegem cotovelos, joelhos e flancos sem sacrificar a mobilidade.\n\nO limite do modificador de Destreza que você soma à CA com esta armadura sobe de **+2 para +3**.\n\nAlém disso, você tem **Vantagem em salvaguardas** contra efeitos que possam derrubá-lo.\n\n* Apenas para armaduras médias.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Arnês de carga",
+    "p": "150 po",
+    "d": "Alças, ganchos e bolsos costurados distribuem o peso do equipamento por todo o corpo.\n\nSua capacidade de carga aumenta em **30 kg** e você tem **Vantagem em testes de Força (Atletismo)** para agarrar, empurrar ou resistir a ser empurrado.\n\nUma vez por turno, você pode sacar ou guardar um item pequeno (como uma poção ou um pergaminho) **sem gastar a ação de Usar Objeto**.\n\n* Aumenta o peso da armadura em 2 kg.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Pele de granito",
+    "p": "500 po",
+    "d": "Com uma ação bônus, a armadura se endurece como rocha viva por **1 minuto**.\n\nEnquanto endurecida, você tem **resistência a dano contundente, cortante e perfurante** de ataques não mágicos e **Vantagem em testes e salvaguardas de Força**, mas seu deslocamento diminui em **3 metros**.\n\n* Limitação: 1 utilização por descanso longo.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Bolso dimensional",
+    "p": "400 po",
+    "d": "Um bolso extradimensional é costurado ao forro da armadura. Ele guarda até **30 kg** de itens, e eles não contam para a sua capacidade de carga.\n\nVocê pode guardar ou recuperar um item com a ação de **Usar Objeto**.\n\n* Criaturas vivas não podem ser guardadas. Se a armadura for destruída, os itens caem em um espaço adjacente.",
+    "a": true,
+    "k": {}
+   }
+  ]
+ },
+ {
+  "t": "Armaduras pesadas",
+  "m": [
+   {
+    "n": "Baluarte de aço",
+    "p": "400 po",
+    "d": "Placas de aço grosso se sobrepõem sobre o peito e os ombros, fazendo de você um muro ambulante.\n\nVocê recebe **+1 na CA**. Se você não se moveu durante o seu turno, recebe **+2 adicionais** (+3 no total) até o início do seu próximo turno.\n\n* Apenas para armaduras pesadas.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Manoplas de aço maciço",
+    "p": "300 po",
+    "d": "As manoplas pesadas transformam seus punhos em marretas.\n\nSeus **ataques desarmados** causam **1d6 de dano contundente + modificador de Força**, e você tem **Vantagem em testes de Força (Atletismo)** para agarrar e derrubar.\n\nUma vez por turno, ao acertar um ataque desarmado em uma criatura Grande ou menor, você pode forçá-la a realizar uma salvaguarda de Força (CD = 8 + bônus de proficiência + modificador de Força). Em caso de falha, ela é empurrada **1,5 metro** ou fica **Caída** (à sua escolha).\n\n* O benefício vale apenas para ataques desarmados.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Runas de abjuração",
+    "p": "500 po",
+    "d": "Runas gravadas por dentro das placas brilham quando você canaliza magias de proteção.\n\nSempre que você conjurar uma magia de **nível 1 ou superior** que proteja uma criatura (aumentando a CA, concedendo resistência, pontos de vida temporários ou Vantagem em salvaguardas), você e a criatura protegida ganham **pontos de vida temporários** iguais a **3 × o nível da magia** por 1 minuto.\n\n* Exemplos: **Escudo da Fé** e **Proteção contra o Bem e o Mal**.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Eco do guardião",
+    "p": "700 po",
+    "d": "Um laço mágico liga a armadura àqueles que você jurou proteger.\n\nQuando uma criatura que você possa ver a até **9 metros** for alvo de um ataque, você pode usar sua reação para **trocar de lugar com ela** e se tornar o alvo do ataque, recebendo **+2 na CA** contra ele. Se o ataque ainda assim acertar, você tem **resistência** ao dano.\n\n* Limitação: 2 utilizações por descanso longo.",
     "a": true,
     "k": {}
    }

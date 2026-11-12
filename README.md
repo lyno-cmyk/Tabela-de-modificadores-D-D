@@ -1,10 +1,11 @@
-# Modificações para armas
+# Modificações para armas e armaduras
 
 Página estática (sem build). Abre direto no navegador (`index.html`) ou via GitHub Pages.
 
 ## Arquivos
 - `mods.js` — seções e modificações (edite pelo GitHub: ícone de lápis → Commit).
 - `weapons.js` — tabela de armas usada no painel lateral.
+- `armors.js` — tabela de armaduras (Leve, Média, Pesada e Escudo) usada no painel lateral. Os modificadores de armadura ficam nas seções "Armaduras leves/médias/pesadas" do `mods.js`; o título da seção define a categoria compatível.
 - `script.js`, `style.css`, `index.html` — código e visual.
 
 ## Publicar
@@ -19,4 +20,4 @@ Campos de cada modificação: `n` nome, `p` preço, `d` descrição (linha em br
 
 ## Navegação e busca
 - **Páginas:** o conteúdo é dividido em páginas (2 colunas no desktop, 1 no celular). Um modificador que não cabe no fim da página continua na próxima. Use as setas do rodapé, as teclas ←/→ (ou PageUp/PageDown) ou deslize no celular. Ao arrastar um modificador até a borda da página, ela vira sozinha.
-- **Busca (🔍 no rodapé):** filtra por texto (nome, preço e descrição; ignora acentos e maiúsculas, todas as palavras precisam aparecer), por arcana/não arcana e por arma compatível (digite parte do nome, ex.: `espada`; considera as regras automáticas e os ajustes manuais `k`). Os filtros se combinam. "Limpar" restaura tudo.
+- **Busca (🔍 no rodapé):** filtra por texto (nome, preço e descrição; ignora acentos e maiúsculas, todas as palavras precisam aparecer), por arcana/não arcana e por arma ou armadura compatível (digite parte do nome, ex.: `espada` ou `couro`; considera as regras automáticas e os ajustes manuais `k`). Os filtros se combinam. "Limpar" restaura tudo.

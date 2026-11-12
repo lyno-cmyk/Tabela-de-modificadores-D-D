@@ -1,6 +1,7 @@
 (function(){
-var D=window.WEAPONS;
+var D=window.WEAPONS,A=window.ARMORS||{};
 var GN={SC:'Simples · corpo a corpo',SD:'Simples · à distância',MC:'Marciais · corpo a corpo',MD:'Marciais · à distância'};
+var AN={L:'Armadura leve (1 minuto para vestir ou despir)',M:'Armadura média (5 minutos para vestir e 1 minuto para despir)',P:'Armadura pesada (10 minutos para vestir e 5 minutos para despir)',E:'Escudo (ação Usar Objeto para equipar ou desequipar)'},AC={L:'leve',M:'média',P:'pesada',E:'escudo'};
 var R={'cano duplo':w=>/^(Mosquete|Pistola)$/.test(w.n),'linha tripla':w=>/^(Arco|Besta)/.test(w.n),'empunhadura leve':w=>!w.duas&&!w.pes&&!w.leve,'haste de arremesso':w=>!w.duas&&!w.pes&&!w.arr,'empunhadura versátil':w=>!w.duas&&!w.pes&&!w.vers&&w.s<=(w.t=='S'?8:10),'gume serrilhado':w=>w.tp=='Cortante','pomo de impacto':w=>w.tp!='Contundente','ponta perfurante reforçada':w=>w.tp=='Perfurante','cabo alongado':w=>!w.ext};
 var cols=document.querySelector('.cols'),ov=document.getElementById('ov'),fs=document.getElementById('fs'),fns=document.getElementById('fns'),fn=document.getElementById('fn'),fp=document.getElementById('fp'),fd=document.getElementById('fd'),dragging=false,mode='add',tgt=null;
 var CT='<span class="ctl"><button class="ib" data-a="e" title="Editar">✎</button><button class="ib" data-a="d" title="Excluir">✕</button></span>';
@@ -15,9 +16,11 @@ function mk(n,p,d,a){var m=document.createElement('div'),h=document.createElemen
 document.querySelectorAll('#sb').forEach(x=>x.remove());var sb=document.createElement('div');sb.id='sb';sb.innerHTML='<h5></h5><table></table>';document.body.appendChild(sb);
 var tb=sb.querySelector('table'),rows=[];tb.insertRow().innerHTML='<th>Nome<th>Dano<th>Propriedades<th>Maestria<th>Peso<th>Custo';
 for(var k in D){var g=tb.insertRow();g.className='g';var c=g.insertCell();c.colSpan=6;c.textContent=GN[k];D[k].split(';').forEach(s=>{var a=s.split('|'),p=a[2],w={n:a[0],t:k[0],r:k[1],tp:a[1].split(' ').pop(),s:+(a[1].match(/d(\d+)/)||[])[1],leve:/Leve/.test(p),pes:/Pesada/.test(p),duas:/Duas/.test(p),arr:/Arremesso/.test(p),vers:/Versátil/.test(p),ext:/Extensão/.test(p)},r=tb.insertRow();a.forEach(x=>r.insertCell().textContent=x);rows.push({e:r,w:w})})}
+tb.insertRow().innerHTML='<th>Armadura<th>CA<th>Força<th>Furtividade<th>Peso<th>Custo';
+for(var k in A){var g=tb.insertRow();g.className='g';var c=g.insertCell();c.colSpan=6;c.textContent=AN[k];A[k].split(';').forEach(s=>{var a=s.split('|'),r=tb.insertRow();a.forEach(x=>r.insertCell().textContent=x);rows.push({e:r,w:{n:a[0],ar:1,cat:k}})})}
 var sel=null;function ovr(m){try{var o=JSON.parse(m.dataset.man||'{}');return Array.isArray(o)?{}:o}catch(e){return{}}}
 function desel(){sel=null;sb.className='';document.querySelectorAll('.m.sel').forEach(x=>x.classList.remove('sel'))}
-function auto(m,w){var ti=m.closest('.sec').querySelector('.t').textContent.toLowerCase(),nm=m.querySelector('.nm').textContent.toLowerCase().trim();return !/foco/.test(ti)&&(!/simples/.test(ti)||w.t=='S')&&(!/marciais/.test(ti)||w.t=='M')&&(!/dist/.test(ti)||w.r=='D')&&(!/corpo/.test(ti)||w.r=='C')&&(!R[nm]||R[nm](w))}
+function auto(m,w){var ti=m.closest('.sec').querySelector('.t').textContent.toLowerCase(),nm=m.querySelector('.nm').textContent.toLowerCase().trim();if(w.ar)return /armadura/.test(ti)&&ti.indexOf(AC[w.cat])>=0&&(!R[nm]||R[nm](w));return !/armadura/.test(ti)&&!/foco/.test(ti)&&(!/simples/.test(ti)||w.t=='S')&&(!/marciais/.test(ti)||w.t=='M')&&(!/dist/.test(ti)||w.r=='D')&&(!/corpo/.test(ti)||w.r=='C')&&(!R[nm]||R[nm](w))}
 function compat(m,w){var mn=ovr(m);return w.n in mn?!!mn[w.n]:auto(m,w)}
 var lastX=null;
 function show(m,keep){sel=m;document.querySelectorAll('.m.sel').forEach(x=>x.classList.remove('sel'));m.classList.add('sel');
@@ -25,7 +28,7 @@ var mn=ovr(m),n=0,first=null,st=sb.scrollTop,f=w=>auto(m,w);
 rows.forEach(r=>{var nme=r.e.cells[0].textContent,k=nme in mn,o=k?mn[nme]:f(r.w);r.a=f(r.w);r.e.className=(o?'ok':'no')+(k?' man':'');if(o){n++;first=first||r.e}});
 var b=m.getBoundingClientRect();sb.querySelector('h5').textContent=m.querySelector('.nm').textContent+' — '+n+' compatíveis · '+Object.keys(mn).length+' ajustes manuais';
 var hs=sb.classList.contains('l')||sb.classList.contains('r'),sd=keep&&hs?(sb.classList.contains('l')?'l':'r'):((lastX==null?b.left+b.width/2:lastX)>innerWidth/2?'l':'r');sb.className='on '+sd+(m.classList.contains('arc')?' arc':'');sb.scrollTop=keep?st:(first?Math.max(0,first.offsetTop-50):0)}
-var hb=document.createElement('div');hb.className='hint';hb.innerHTML='<button class="cb">Restaurar regras</button>Clique em uma arma para alternar se ela é compatível (✎ = ajuste manual).';sb.insertBefore(hb,tb);
+var hb=document.createElement('div');hb.className='hint';hb.innerHTML='<button class="cb">Restaurar regras</button>Clique em uma arma ou armadura para alternar se ela é compatível (✎ = ajuste manual).';sb.insertBefore(hb,tb);
 hb.firstChild.onclick=()=>{if(sel&&sel.isConnected){sel.dataset.man='{}';show(sel,1)}};
 tb.addEventListener('click',e=>{var tr=e.target.closest('tr'),r=rows.filter(x=>x.e===tr)[0];if(!r||!sel||!sel.isConnected)return;var o=ovr(sel),nme=tr.cells[0].textContent,nw=!tr.classList.contains('ok');if(nw===r.a)delete o[nme];else o[nme]=nw;sel.dataset.man=JSON.stringify(o);show(sel,1)});
 document.addEventListener('click',e=>{var t=e.target;if(!t.closest||t.closest('#sb,#ov,.ib,.ft,#sp'))return;var m=t.closest('.m');if(m&&!dragging){lastX=e.clientX;show(m)}else desel()});
@@ -106,7 +109,7 @@ m.hidden=!ok;if(ok)vis++});
 secs().forEach(s=>s.hidden=active&&!s.querySelector(':scope>.m:not([hidden])'));
 if(sel&&sel.hidden)desel();
 rs.textContent=active?vis+' de '+all+' modificadores':all+' modificadores';
-wn.textContent=wq?(ws.length?' · '+ws.length+(ws.length>1?' armas correspondem':' arma corresponde'):' · nenhuma arma encontrada'):'';
+wn.textContent=wq?(ws.length?' · '+ws.length+(ws.length>1?' itens correspondem':' item corresponde'):' · nenhum item encontrado'):'';
 emp.hidden=!(active&&!vis);sbtn.classList.toggle('on',active);layout();hl()}
 function refresh(){if(active)apply();else{layout();hl()}}
 function search(){page=0;apply()}

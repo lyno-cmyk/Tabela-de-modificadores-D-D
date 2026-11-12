@@ -1,4 +1,4 @@
-window.MODS_VERSION = 6;
+window.MODS_VERSION = 8;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -6,7 +6,7 @@ window.MODS = [
    {
     "n": "Perfuração letal",
     "p": "50 po",
-    "d": "O dano de um acerto crítico passa a ser multiplicado por 3. Isso vale somente para o dado da arma.\n\n* Apenas para armas que dão dano perfurante",
+    "d": "O dano de um acerto crítico passa a ser multiplicado por 3. Isso vale somente para o dado da arma.\n\nLimiar de crítico desce em 1\n\n* Apenas para armas que dão dano perfurante",
     "a": false,
     "k": {
      "Cajado": false,
@@ -21,7 +21,7 @@ window.MODS = [
    {
     "n": "Extremidade reforçada",
     "p": "50 po",
-    "d": "A arma ganha mais 1d4 de dano extra contundente.\n\n* apenas para armas que dão dano contundente.",
+    "d": "A arma ganha mais 1d4 de dano extra contundente no primeiro ataque no turno.\n\n* apenas para armas que dão dano contundente.",
     "a": false,
     "k": {
      "Martelo Leve": false,
@@ -35,17 +35,14 @@ window.MODS = [
    {
     "n": "Fio de obsidiana",
     "p": "50 po",
-    "d": "A classe do dado de dano aumenta em 1\n\nSeu primeiro ataque no combate causa 6 de dano cortante adicional",
+    "d": "A classe do dado de dano aumenta em 1\n\nSeu primeiro ataque no combate causa 6 de dano cortante adicional\n\n* Para armas com dano cortante e perfurante.",
     "a": false,
     "k": {
      "Martelo Leve": false,
      "Maça": false,
-     "Lança": false,
      "Clava Grande": false,
      "Clava": false,
-     "Cajado": false,
-     "Azagaia": false,
-     "Adaga": false
+     "Cajado": false
     }
    },
    {
@@ -68,13 +65,6 @@ window.MODS = [
     "d": "A arma recebe a propriedade Versátil.\n\nQuando empunhada com as duas mãos, seu dado de dano aumenta em uma categoria (d4 para d6, d6 para d8).\n\n* Só pode ser aplicada a armas que não possuam a propriedade Pesada ou Duas Mãos e cujo dado de dano seja d4, d6 ou d8.",
     "a": false,
     "k": {}
-   },
-   {
-    "n": "Arma Chrono",
-    "p": "700 po",
-    "d": "Muda o tipo de Dado da Arma para CdX\n(1d6 -> Cd6, 1d8 -> Cd8, 1d10 -> Cd10)\n\nAo tirar o Valor Máximo no dado CdX o Tier do Dado aumenta.\n(1d6 -> Rola o Dado -> 6 -> Aumento no Tier -> 1d8 (Dano Novo da Arma)\nAo tirar o Valor Mínimo o Inverso acontece.\n(1d6 -> 1 -> 1d4)\n\nPorém ao chegar em 12 no Cd12 o dado vira D20, e ao tirar 20 vira um D100.\n\nAlgo de especial acontece ao chegar em 100 ou 1 dependendo do Extremo atingido.",
-    "a": true,
-    "k": {}
    }
   ]
  },
@@ -84,10 +74,11 @@ window.MODS = [
    {
     "n": "Canalizador de veneno",
     "p": "100 po",
-    "d": "Com uma ação bônus, você envenena a próxima munição disparada por essa arma. A munição envenenada utiliza os efeitos e as propriedades do item **Veneno Básico**.",
+    "d": "Com uma ação bônus, você envenena a próxima munição disparada por essa arma. A munição envenenada utiliza os efeitos e as propriedades do item **Veneno Básico**.\n\n* Isso não gasta frascos de veneno.",
     "a": true,
     "k": {
-     "Zarabatana": true
+     "Zarabatana": true,
+     "Funda": false
     }
    }
   ]
@@ -98,7 +89,7 @@ window.MODS = [
    {
     "n": "Expandir o gume / Adicionar peso extra",
     "p": "200 po",
-    "d": "É adicionado peso à arma, deixando-a desequilibrada e exigindo mais habilidade para empunhá-la adequadamente.\n\nAdiciona +1 de dano da arma.\n\n* Caso não possua pelo menos 18 em um desses atributos, sofre uma penalidade de -1d4 nas jogadas de ataque.",
+    "d": "É adicionado peso à arma, deixando-a desequilibrada e exigindo mais habilidade para empunhá-la adequadamente.\n\nAdiciona +1 de dano da arma.\n\nDobra o peso da arma\n\n* Caso não possua pelo menos 18 em um desses atributos, sofre uma penalidade de -1d4 nas jogadas de ataque.",
     "a": false,
     "k": {
      "Chicote": false
@@ -141,7 +132,7 @@ window.MODS = [
    },
    {
     "n": "Equilíbrio de duelo",
-    "p": "150 po",
+    "p": "300 po",
     "d": "Enquanto não houver outras criaturas a até 1,5 metro de você, além do seu alvo, recebe +2 nas jogadas de ataque realizadas com essa arma.",
     "a": false,
     "k": {}
@@ -149,7 +140,7 @@ window.MODS = [
    {
     "n": "Quebra-muros",
     "p": "100 po",
-    "d": "Dobro do dano contra objetos ou estruturas\n\nVantagem em ataques e + 1d6 de dano adicional contra constructos.\n\n* Somente para armas que dão dano contundente",
+    "d": "Dobro do dano contra objetos ou estruturas\n\nA classe do dado de dano sobe em 1\n\nVantagem em ataques e + 6 de dano adicional contra constructos.\n\nAumenta o peso da arma em 1,5 kg\n\n* Somente para armas que dão dano contundente",
     "a": false,
     "k": {
      "Alabarda": false,
@@ -176,10 +167,31 @@ window.MODS = [
   "m": [
    {
     "n": "Cano duplo",
-    "p": "200 po",
+    "p": "500 po",
     "d": "A arma é modificada para comportar duas munições simultaneamente.\n\nÀ sua escolha, você pode carregar duas munições no cano. Ao fazê-lo, suas jogadas de ataque com essa arma sofrem uma penalidade de -2, mas você faz mais 1 ataque adicional.\n\n* Somente em armas de pólvora",
     "a": false,
     "k": {}
+   },
+   {
+    "n": "Cano curva-balas",
+    "p": "100 po",
+    "d": "O cano da arma fica contorcido, fazendo com que as munições disparadas por ela ignorem os benefícios de meia cobertura e cobertura de três quartos. Essa propriedade não ignora cobertura total.\n\nAlém disso, você recebe **+1 na primeira jogada de ataque** realizada com essa arma em cada turno.\n\n* Apenas para armas de pólvora",
+    "a": true,
+    "k": {
+     "Arco Longo": false,
+     "Besta de Mão": false,
+     "Besta Pesada": false,
+     "Zarabatana": false
+    }
+   },
+   {
+    "n": "Disparo Ricocheteante",
+    "p": "200 po",
+    "d": "Sempre que o resultado da rolagem de dano da arma for par, o disparo ricocheteia uma vez em direção a outro inimigo próximo do alvo inicial, desde que esteja a até **6 metros** dele. O ricochete realiza uma nova jogada de ataque, sem adicionar seu bônus de proficiência.\n\n* O ricochete não causa dano de ataque furtivo.",
+    "a": true,
+    "k": {
+     "Zarabatana": false
+    }
    }
   ]
  },
@@ -188,14 +200,28 @@ window.MODS = [
   "m": [
    {
     "n": "Afiar / polir",
-    "p": "5 po",
-    "d": "Essa modificação dura até o fim de um combate.\n\nConcede +1 nas jogadas de ataque e nas rolagens de dano.",
+    "p": "25 po",
+    "d": "Essa modificação dura até o fim de um combate.\n\nConcede +1 nas jogadas de ataque e nas rolagens de dano.\n\n* Leva um minuto para fazer isso",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Arma Chrono",
+    "p": "700 po",
+    "d": "Muda o tipo de Dado da Arma para CdX\n(1d6 -> Cd6, 1d8 -> Cd8, 1d10 -> Cd10)\n\nAo tirar o Valor Máximo no dado CdX o Tier do Dado aumenta.\n(1d6 -> Rola o Dado -> 6 -> Aumento no Tier -> 1d8 (Dano Novo da Arma)\nAo tirar o Valor Mínimo o Inverso acontece.\n(1d6 -> 1 -> 1d4)\n\nPorém ao chegar em 12 no Cd12 o dado vira D20, e ao tirar 20...\n\nAo sair de combate ou atingir um dos extremos, o dado base da arma volta ao normal.\n\nAlgo de especial acontece ao chegar em 20 ou 1 dependendo do Extremo atingido.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Mortalha de guerra",
+    "p": "100 po",
+    "d": "Uma vez por turno, ao atacar, você pode optar por receber uma penalidade de -3 para acertar, entretanto você causa +6 de dano do tipo da arma em caso de acerto.",
     "a": false,
     "k": {}
    },
    {
     "n": "Guarda reforçada",
-    "p": "300 po",
+    "p": "150 po",
     "d": "A arma recebe uma proteção adicional para as mãos.\n\nAo ser atingido por um ataque corpo a corpo, você pode utilizar sua reação para receber +2 na CA contra esse ataque, podendo fazer com que ele erre.",
     "a": false,
     "k": {}
@@ -208,8 +234,15 @@ window.MODS = [
     "k": {}
    },
    {
+    "n": "Multi-uso",
+    "p": "500 po",
+    "d": "Você escolhe até duas habilidades de maestria extras para sua arma.",
+    "a": false,
+    "k": {}
+   },
+   {
     "n": "Gume serrilhado",
-    "p": "100 po",
+    "p": "150 po",
     "d": "Armas que causam dano cortante recebem pequenas serrilhas em seu gume.\n\nAo acertar um ataque, o alvo sofre 1d6 de dano cortante adicional no início do próximo turno dele.\n\n* Esse efeito pode acumular com acertos.",
     "a": false,
     "k": {}
@@ -231,14 +264,14 @@ window.MODS = [
    {
     "n": "Cabo extra/lâminas gêmeas",
     "p": "500po",
-    "d": "Você recebe 1 ataque adicional com essa arma. Em contrapartida, sofre uma penalidade de -1 nas jogadas de ataque realizadas com ela.",
+    "d": "Uma vez por turno, você recebe 1 ataque adicional com essa arma caso o ataque anterior tenha errado . Em contrapartida, sofre uma penalidade de -1 nas jogadas de ataque realizadas com ela.",
     "a": false,
     "k": {}
    },
    {
     "n": "impaciência",
-    "p": "350 po",
-    "d": "**Espírito Impaciente.**\nUma arma imbuída com um espírito incapaz de tolerar fracassos.\n\nImpaciência: Toda vez que você **errar** um ataque com esta arma, ela acumula energia, concedendo **+1d8 de dano energético e +1 na próxima jogada de ataque** realizada com ela. Os bônus são cumulativos.\n\nA última gota: Caso você erre **5 ataques consecutivos** com esta arma, ela se solta da sua mão e persegue o alvo a até 18 metros, realizando um ataque descarregando toda a energia acumulada em uma explosão. Todas as criaturas a até **1,5 metro do alvo** devem realizar uma **salvaguarda de Destreza (CD 14).** Em caso de falha, sofrem 5d8 de dano energético.\n\n* Os acúmulos são gastos após acertar um ataque.",
+    "p": "200 po",
+    "d": "**Espírito Impaciente.**\nUma arma imbuída com um espírito incapaz de tolerar fracassos.\n\nImpaciência: Toda vez que você **errar** um ataque com esta arma, ela acumula energia, concedendo **+1d8 de dano energético e +1 na próxima jogada de ataque** realizada com ela. Os bônus são cumulativos até no máximo de 2.\n\nA última gota: Caso você erre **3 ataques consecutivos** com esta arma, ela se solta da sua mão e persegue o alvo a até 18 metros, realizando um ataque descarregando toda a energia acumulada em uma explosão. Todas as criaturas a até **1,5 metro do alvo** devem realizar uma **salvaguarda de Destreza (CD 14).** Em caso de falha, sofrem 5d8 de dano energético.\n\n* Os acúmulos são gastos após acertar um ataque.",
     "a": true,
     "k": {}
    },
@@ -251,15 +284,15 @@ window.MODS = [
    },
    {
     "n": "Conflagração",
-    "p": "400 po",
-    "d": "Com uma ação bônus, você acende sua arma em chamas, causando 2d8 de dano de fogo extra nos ataques.\n\n* Com uma ação livre você apaga as chamas da sua arma.",
+    "p": "800 po",
+    "d": "Com uma ação bônus, você acende sua arma em chamas, causando 2d6 de dano de fogo extra nos ataques.\n\nEnquanto a arma empunhada estiver em chamas, Se o resultado do dado base de ataque for menor ou igual a 5 o fogo se apaga.\n\n* Com uma ação livre você apaga as chamas da sua arma. Ou se dissipa em 10 minutos sozinho.",
     "a": true,
     "k": {}
    },
    {
     "n": "Imbuir relâmpago 🌩️",
     "p": "300 po",
-    "d": "**Imbuir Relâmpago.** Com uma ação bônus, você ergue sua arma aos céus, fazendo com que um raio caia sobre ela e a eletrifique.\n\nEnquanto estiver eletrificada, você recebe vantagem nas jogadas de ataque contra criaturas que estejam usando armaduras de metal.\n\nDurante 1 turno após eletrificar a arma, ao acertar um ataque com ela, você causa **+1d8 de dano elétrico** adicional e aplica a condição **Conduíte** ao alvo.\n\nCriaturas com a condição **Conduíte** passam a atrair ataques com armas com maior facilidade, incluindo ataques realizados com munições. As jogadas de ataque realizadas contra essas criaturas recebem um bônus de **+1d4**.\n\n* Conduíte dura até o final do próximo turno da criatura afetada.",
+    "d": "**Imbuir Relâmpago.** Com uma ação bônus, você ergue sua arma aos céus, fazendo com que um raio caia sobre ela e a eletrifique.\n\nEnquanto estiver eletrificada, você recebe vantagem nas jogadas de ataque contra criaturas que estejam usando armaduras de metal.\n\nDurante 1 turno após eletrificar a arma, ao acertar um ataque com ela, você causa **+1d6 de dano elétrico** adicional e aplica a condição **Conduíte** ao alvo.\n\nCriaturas com a condição **Conduíte** passam a atrair ataques com armas com maior facilidade, incluindo ataques realizados com munições. As jogadas de ataque realizadas contra essas criaturas recebem um bônus de **+1d4**.\n\n* Conduíte dura até o final do próximo turno da criatura afetada.",
     "a": true,
     "k": {}
    },
@@ -272,14 +305,14 @@ window.MODS = [
    },
    {
     "n": "Infusão arcana",
-    "p": "300 po",
+    "p": "150 po",
     "d": "O dano da arma é convertido em dano mágico permanentemente.",
     "a": true,
     "k": {}
    },
    {
     "n": "Selo da sorte",
-    "p": "300 po",
+    "p": "150 po",
     "d": "Uma vez por combate, ao tirar falha crítica no dado de ataque, você pode rolar esse dado uma outra vez.",
     "a": true,
     "k": {}
@@ -287,14 +320,21 @@ window.MODS = [
    {
     "n": "Benção prismática",
     "p": "800 po",
-    "d": "Com uma ação bônus, você escolhe um dos 5 elementos:\n- Fogo: combustão\n- Gelo:  -3m de movimento; não acumula\n- Ácido: -2 de CA até o inicio do próximo turno\n- Elétrico: O alvo não pode fazer reações por 1 turno\n- Veneno: Fica com a condição envenenando até o final do próximo turno.\n\nEm seguida, ao realizar um ataque você causa dano equivalente ao dado de dano da arma, por exemplo um machado grande ganha 1d12 + 1d12 elemental.\n\nVocê pode trocar o elemento da arma com uma ação bônus.\n\nA benção prismática dura até você acertar um ataque e se dissipa em 1 hora se não utilizado.",
+    "d": "Com uma ação bônus, você escolhe um dos 5 elementos:\n- Fogo: +1d6 de dano de fogo; alvo entra em combustão por 2 turnos\n- Gelo:  -3m de movimento; não acumula\n- Ácido: -2 de CA até o inicio do próximo turno\n- Elétrico: O alvo não pode fazer reações por 1 turno\n- Veneno: Fica com a condição envenenando até o final do próximo turno se falhar em uma salvaguarda de CONS DT 15.\n\nEm seguida, ao realizar um ataque você causa dano equivalente ao dado de dano da arma, por exemplo um machado grande ganha 1d12 + 1d12 elemental.\n\nVocê pode trocar o elemento da arma com uma ação bônus.\n\nA benção prismática dura até você acertar um ataque e se dissipa em 1 hora se não utilizado.",
     "a": true,
     "k": {}
    },
    {
     "n": "Perfeccionismo",
     "p": "333 po",
-    "d": "**Perfeição**\n\nAo realizar acertos consecutivos, você acumula pontos de Perfeição.\n\nAo atingir 3 pontos de Perfeição, você pode gastá-los para executar as seguintes técnicas:\n\n- 1 ponto: Realiza um ataque extra, sofrendo uma penalidade de -3d3 na jogada de ataque.\n- 2 pontos: Realiza um ataque extra, recebendo um bônus de +3 na jogada de ataque.\n- 3 pontos: Realiza um único ataque especial, recebendo um bônus de +3d3 na jogada de ataque. Se acertar, o ataque é considerado um acerto crítico.\n\nFalha consecutiva: Caso erre dois ataques consecutivos, você deve realizar um teste de Performance (CD 15). Em caso de falha, sua arma fica tão envergonhada de você que desaparece em uma nuvem de pó, retornando apenas no início do seu próximo turno.",
+    "d": "**Perfeição**\n\nAo realizar acertos consecutivos, você acumula pontos de Perfeição.\n\nAo atingir 3 pontos de **Perfeição**, você pode gastá-los para executar as seguintes técnicas:\n\n- 1 ponto: Realiza **um ataque extra**, sofrendo uma penalidade de -3d3 na jogada de ataque.\n- 2 pontos: **Realiza um ataque extra**, recebendo um bônus de +3 na jogada de ataque.\n- 3 pontos: Realiza **um único ataque extra especial**, recebendo um bônus de +3d3 na jogada de ataque. Se acertar, o ataque é considerado um acerto crítico.\n\nAtaques extras concedidos por essa habilidade não dão pontos em caso de acerto.\n\nAo atingir 3 pontos de **Perfeição** a arma fica satisfeita com sua performance e para de se importar com acertos ou falhas consecutivas até o próximo combate.\n\nFalha consecutiva: Caso erre dois ataques consecutivos, você deve realizar um teste de Atuação(CD 15). Em caso de falha, sua arma fica tão envergonhada de você que se recusa a lutar, fazendo você receber -2 no ataque com ela até o final do seu próximo turno.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Espírito Dançarino",
+    "p": "200 po",
+    "d": "**Espírito Dançarino.** Você imbui sua arma com um espírito dançarino, capaz de confundir seus adversários com movimentos imprevisíveis.\n\nUma vez por turno, você pode gastar uma utilização para realizar uma jogada de ataque utilizando Carisma (Atuação) no lugar do atributo normalmente utilizado. Ao fazer isso, você distrai o alvo com seus movimentos, recebendo **vantagem na jogada de ataque**.\n\n* Limitação: 2 utilizações por descanso curto.",
     "a": true,
     "k": {}
    }
@@ -304,9 +344,47 @@ window.MODS = [
   "t": "Armas à distância em geral",
   "m": [
    {
+    "n": "Linha tripla",
+    "p": "200 po",
+    "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\nUma vez por descanso curto, você pode optar por substituir um dos seus ataques por um ataque duplo ou triplo:\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Riser quadruplo",
+    "p": "200 po",
+    "d": "O riser do seu arco agora segura até 4 flechas de uma vez.\nUma vez por descanso curto, você pode optar por trocar um dos seus ataques por um disparo múltiplo:\n1 flecha: ataque normal\n2 flechas: -1d2 em cada ataque\n3 flechas: -1d4 em cada ataque\n4 flechas: Desvantagem **absoluta** em todos os ataques\n\n* Disponível somente para arcos\n*Absoluto(a): Que não tem como mudar de forma alguma",
+    "a": false,
+    "k": {
+     "Funda": false,
+     "Dardo": false,
+     "Besta Leve": false,
+     "Besta de Mão": false,
+     "Besta Pesada": false,
+     "Mosquete": false,
+     "Pistola": false,
+     "Zarabatana": false
+    }
+   },
+   {
+    "n": "Linha poderosa",
+    "p": "100 po",
+    "d": "Uma vez por turno você pode optar por receber uma penalidade de -5 em um dos ataques, mas você causa + 10 de dano extra do tipo da arma nesse mesmo ataque.\n\n* Somente para bestas",
+    "a": false,
+    "k": {
+     "Funda": false,
+     "Dardo": false,
+     "Arco Curto": false,
+     "Arco Longo": false,
+     "Mosquete": false,
+     "Pistola": false,
+     "Zarabatana": false
+    }
+   },
+   {
     "n": "Disparos congelantes",
     "p": "300 po",
-    "d": "**Disparo Congelante.** Com uma ação bônus, você imbui suas munições com energia gélida. Ao serem disparadas por essa arma, elas causam **+1d8 de dano gélido** adicional.\n\nCriaturas que receberem dano gélido desses disparos têm seu deslocamento reduzido em **3 metros**. Caso o deslocamento de uma criatura seja reduzido a 0, ela fica **Paralisada** até o início do seu próximo turno.",
+    "d": "**Disparo Congelante.** Com uma ação bônus, você imbui suas munições com energia gélida. Ao serem disparadas por essa arma, elas causam **+1d6 de dano gélido** adicional.\n\nCriaturas que receberem dano gélido desses disparos têm seu deslocamento reduzido em **3 metros**. Caso o deslocamento de uma criatura seja reduzido a 0, ela deve fazer uma salvaguarda de CON DT 15 ou fica **Paralisada** até o início do seu próximo turno.",
     "a": true,
     "k": {}
    },
@@ -316,23 +394,30 @@ window.MODS = [
     "d": "O dano da munição disparada agora é mágico.",
     "a": true,
     "k": {}
-   },
-   {
-    "n": "Linha tripla",
-    "p": "200 po",
-    "d": "As cordas do arco ou da besta são modificadas para comportar até 3 munições simultaneamente.\n\n**2 munições de uma vez:** Você pode realizar ataques contra até 2 alvos diferentes, sofrendo uma penalidade de -1 nas jogadas de ataque.\n\n**3 munições de uma vez:** Você pode realizar ataques contra até 3 alvos diferentes, sofrendo uma penalidade de -2 nas jogadas de ataque.\n\n* Disponível somente para arcos e bestas.*",
-    "a": false,
-    "k": {}
    }
   ]
  },
  {
-  "t": "Foco arcano",
+  "t": "Foco arcano/Símbolo sagrado",
   "m": [
    {
     "n": "Infusão elemental (Varia)",
-    "p": "500 po",
-    "d": "**Infusão Elemental do Foco Arcano**\n\nPropriedade especial de foco arcano\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe +1 nas jogadas de ataque mágico de magias que causam dano de fogo.\n\nO raio da magia Bola de Fogo aumenta em 1,5 metro.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia Raio de Bruxa pode se conectar a até 2 criaturas adicionais. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar todas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em 1,5 metro até o final do turno. Esse efeito é acumulável.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com tripla vantagem.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando 4d6 pontos de vida + seu nível atual.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível).\nEm caso de falha a criatura fica amendrontada até o fim do seu próximo turno.\n\nLimitação. Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
+    "p": "800 po",
+    "d": "**Infusão Elemental do Foco Arcano**\n\n* Propriedade especial de foco arcano.*\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe **+1 nas jogadas de ataque mágico** de magias que causam dano de fogo.\n\nO raio da magia **Bola de Fogo** aumenta em **1,5 metro**.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia **Raio de Bruxa** pode se conectar a uma criatura adicional. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar ambas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em **1,5 metro** até o final do turno. Esse efeito é acumulável até 3 vezes.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com **tripla vantagem**.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando **1d6 pontos de vida + seu nível atual**.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível). Em caso de falha, a criatura fica **Amedrontada** até o fim do seu próximo turno.\n\n**Limitação.** Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Imbuir Paz Eterna",
+    "p": "200 po",
+    "d": "Toda fonte de cura causada pelo seu símbolo sagrado terá um bônus de +1d6",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Loucura à beira da morte",
+    "p": "300 po",
+    "d": "**Infusão de Fé.** Suas magias de cura agora podem ter seus dados de cura dobrados, mas isso envolve um risco.\n\nUma vez por turno, ao conjurar uma magia de cura, você deve realizar um teste de perícia de Religião. A DT é igual a **12 + o nível da magia conjurada**. Em caso de sucesso, você dobra a quantidade de dados de cura rolados pela magia.\n\nCaso falhe no teste, a magia de cura é completamente anulada. Entretanto, se falhar por 5 pontos ou menos, a magia é convertida em dano necrótico.\n\n* Limitação: Disponível apenas para símbolos sagrados.\n\n* Limitação: Permite apenas uma única instância de cura por turno.",
     "a": true,
     "k": {}
    }

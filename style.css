@@ -66,3 +66,56 @@ h2{display:flex;align-items:center;gap:8px}h2 .t{flex:1}h3 .nm{margin-left:0;whi
 ::highlight(srch){background:#f1d36a;color:inherit}
 @media(max-width:700px){.sp{left:18px;bottom:calc(18px + 56px);width:calc(100% - 36px)}}
 @media(prefers-reduced-motion:reduce){.cols{transition:none}}
+
+/* ===== Redesign: grimório de modificações ===== */
+:root{--red:#71351f;--ink:#292016;--bg:#211a16;--page:#f3e8c9;--box:#ead9ad;--gold:#b88b3e;--gold-light:#e4c77d;--arc:#315d4c;--arc-light:#b7d4a2}
+body{background:radial-gradient(ellipse at 12% 8%,rgba(176,119,48,.25),transparent 34%),radial-gradient(ellipse at 90% 88%,rgba(92,54,31,.35),transparent 38%),linear-gradient(135deg,#171411 0%,#49301f 48%,#1e1915 100%);color:var(--ink);font-family:"Palatino Linotype","Book Antiqua",Georgia,serif}
+.page{background:linear-gradient(135deg,rgba(255,255,255,.34),transparent 28%),radial-gradient(ellipse at 50% 0%,#fff8e5 0%,transparent 65%),linear-gradient(145deg,#f7efd9,#e9d9b5 58%,#f4e9ce);border:1px solid #9c7138;box-shadow:0 0 0 3px #3b281b,0 0 0 5px #c29a53,0 0 0 7px #3b281b,0 18px 55px #0009;border-radius:4px}
+.page:before,.page:after{content:"";position:absolute;pointer-events:none;inset:9px;border:1px solid #bd9857;border-radius:2px;opacity:.62}.page:after{inset:14px;border-color:#d6bd83;opacity:.48}
+.hd,h1,.sub,.vp,.ft{position:relative;z-index:2}
+h1{color:#572a1b;border:0;padding:0 0 12px;text-shadow:0 1px #fff7d9;background:linear-gradient(90deg,#572a1b,#a56b2c 52%,#572a1b);background-clip:text;-webkit-background-clip:text;color:transparent;font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;font-variant:small-caps;letter-spacing:.035em}
+.hd{padding-bottom:9px;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,transparent,#a77a39,#e0c47d,#a77a39,transparent) 1}
+.sub{color:#795d3c;font-size:13px;letter-spacing:.04em}
+h2{color:#65321f;border:0;padding:5px 10px;margin:18px 0 10px;background:linear-gradient(90deg,rgba(161,111,48,.18),rgba(235,216,171,.7),transparent);border-left:3px solid #a87936;border-bottom:1px solid #c5a56b;text-shadow:0 1px #fff8e5}
+.m{position:relative;overflow:hidden;background:linear-gradient(125deg,#f7edcf 0%,#e9d8ae 58%,#f2e5c4 100%);border:1px solid #c5a66c;border-left:4px solid #86502b;border-radius:3px;box-shadow:0 2px 5px #51351b18,inset 0 1px #fff9e9;padding:10px 13px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.m:hover{transform:translateY(-1px);box-shadow:0 5px 12px #51351b24,inset 0 1px #fff9e9}
+.m h3{color:#67351f}.m p.r{color:#70563a}
+.m.arc{background:linear-gradient(125deg,#e6edcf 0%,#d0dfbd 58%,#e8edcf 100%);border-color:#9ab28a;border-left-color:#35684b;box-shadow:0 2px 7px #244b3218,inset 0 1px #f8ffe9}
+.m.arc h3{color:#285a43}.m.arc p.r{color:#3f634a}
+.m.sel{outline:2px solid #a87936;outline-offset:1px;box-shadow:0 0 0 4px #d8b96b55,0 5px 15px #51351b25}.m.arc.sel{outline-color:#3e805b;box-shadow:0 0 0 4px #80b58c55,0 5px 15px #244b3225}
+.add,.nv{border:1px solid #a87936;color:#6c3b20;background:linear-gradient(145deg,#fff5d9,#d9bd7c);box-shadow:inset 0 1px #fff9e8,0 2px 4px #4a2e171f;transition:filter .15s,transform .15s,box-shadow .15s}
+.add:hover,.nv:hover:not(:disabled),.nv.on,.nv[aria-expanded=true]{color:#fff4d5;background:linear-gradient(145deg,#985b2d,#5c2d1b);box-shadow:inset 0 1px #d9a96a,0 3px 8px #4a2e1733}
+.add:active,.nv:active{transform:translateY(1px)}
+.ib{border:1px solid #b89455;background:linear-gradient(145deg,#fff5dc,#e6d1a1);color:#693c22;box-shadow:inset 0 1px #fff9e8}.ib.arm{background:linear-gradient(145deg,#873d25,#4c2017);color:#fff0d2}
+.ft{border-top:1px solid #c3a46a}.pg{background:linear-gradient(90deg,transparent,#ead9b0 25%,#ead9b0 75%,transparent)}#pgn{color:#67351f}
+#sb{background:linear-gradient(135deg,rgba(255,255,255,.45),transparent 35%),linear-gradient(145deg,#f8efd8,#e7d5ad);border:2px solid #a87936;box-shadow:0 0 0 3px #3b281b,0 12px 35px #0008;color:#332419;z-index:40}
+#sb h5{color:#66331f;border-bottom:1px solid #c3a46a;padding-bottom:7px;font-variant:small-caps;font-size:17px}#sb th{color:#67351f;border-bottom:2px solid #a87936}#sb td{border-bottom:1px solid #d7c49a}#sb tr.ok{background:linear-gradient(90deg,#ead28a99,#f4e4b688)}
+#sb.arc{border-color:#477b5c;background:linear-gradient(135deg,#f0f5df,#dce8cb)}#sb.arc h5,#sb.arc th{color:#285a43}#sb.arc tr.ok{background:linear-gradient(90deg,#b9d9a9bb,#e0edcf99)}
+#sb .cb{border:1px solid #a87936;background:linear-gradient(145deg,#fff5d9,#e3cc96);color:#65351f;border-radius:3px;padding:3px 7px}#sb.arc .cb{border-color:#477b5c;color:#285a43}#sb .hint{color:#70583c}
+.ov{background:radial-gradient(ellipse at center,#4b3829aa,#100d0bdc);backdrop-filter:blur(4px)}
+.pn{background:linear-gradient(145deg,#fff7df,#e7d4a8);border:2px solid #a87936;border-radius:5px;box-shadow:0 0 0 4px #3b281b,0 18px 55px #0009}
+.pn h4{color:#67351f;border-bottom:1px solid #c4a46a;padding-bottom:8px}.pn input,.pn select,.pn textarea,.sp input{border:1px solid #c1a16a;border-radius:3px;background:linear-gradient(180deg,#fffaf0,#f0e4c6);color:#332419}
+.pn input:focus,.pn select:focus,.pn textarea:focus{outline:2px solid #c39a50}
+.bt button{border:1px solid #a87936;border-radius:3px;background:linear-gradient(145deg,#fff4d8,#e4cf9d);color:#67351f}.bt .ok{background:linear-gradient(145deg,#8a4d2a,#57291b);color:#fff1d0}
+.sp{background:linear-gradient(145deg,#fff5db,#e6d2a5);border:2px solid #a87936;border-radius:5px;box-shadow:0 8px 28px #21160e55}
+.seg button{border-color:#a87936;background:linear-gradient(145deg,#fff4d8,#e4cf9d);color:#67351f}.seg button.on{background:linear-gradient(145deg,#8a4d2a,#57291b);color:#fff1d0}
+.inf{color:#70583c}.inf #rs{color:#67351f}::highlight(srch){background:#e7bd55;color:#332419}.sec:not(:has(.m))::after{color:#8c7046}
+#artwork{position:fixed;top:0;bottom:0;width:min(49vw,760px);z-index:39;pointer-events:none;opacity:0;transform:translateY(12px) scale(.985);background-repeat:no-repeat;background-position:center;background-size:contain;filter:saturate(.82) drop-shadow(0 12px 20px #25170d35);transition:opacity .75s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+#artwork.on{opacity:.17;transform:translateY(0) scale(1)}#artwork.left{left:0}#artwork.right{right:0}
+#artwork.normal{background-image:url("arte-nao-arcana.png")}#artwork.arc{background-image:url("arte-arcana.png");filter:saturate(.9) drop-shadow(0 12px 20px #183b2935)}
+@media(max-width:700px){#artwork{width:56vw;opacity:0}#artwork.on{opacity:.12}#sb{z-index:40}.page{border-radius:3px}}
+@media(prefers-reduced-motion:reduce){#artwork,.m,.add,.nv{transition:none}}
+
+/* Ajustes finais: artes como camada de fundo e título com maior contraste */
+#artwork{z-index:3;opacity:0;isolation:isolate;background-position:center;background-size:contain;filter:saturate(.88) drop-shadow(0 10px 18px #25170d28)}
+#artwork.on{opacity:.24;transform:translateY(0) scale(1)}
+#artwork.left{left:0;right:auto;mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 100%)}
+#artwork.right{right:0;left:auto;mask-image:linear-gradient(to left,#000 0%,#000 58%,transparent 100%);-webkit-mask-image:linear-gradient(to left,#000 0%,#000 58%,transparent 100%)}
+#artwork.arc{background-image:url("arte-arcana.png")}
+.vp{position:relative;z-index:4}
+.m{background:linear-gradient(125deg,rgba(247,237,207,.91) 0%,rgba(233,216,174,.86) 58%,rgba(242,229,196,.91) 100%);backdrop-filter:blur(1.5px)}
+.m.arc{background:linear-gradient(125deg,rgba(230,237,207,.92) 0%,rgba(208,223,189,.86) 58%,rgba(232,237,207,.92) 100%)}
+.hd{position:relative;z-index:5;padding:7px 10px 12px;margin:-4px -8px 8px;border-bottom:2px solid #a87936;background:linear-gradient(90deg,rgba(91,43,25,.10),rgba(255,248,225,.76) 24%,rgba(255,248,225,.76) 76%,rgba(91,43,25,.10));}
+.hd h1{color:#572a1b;background:none;-webkit-text-fill-color:#572a1b;text-shadow:0 1px 0 #fff7df,0 2px 0 rgba(139,91,43,.22);font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:.045em;line-height:1.12;padding:0 0 4px;border-bottom:0}
+.hd:after{content:none;display:none}
+@media(max-width:700px){#artwork{opacity:0;width:56vw}#artwork.on{opacity:.13}.hd{margin:0 0 8px;padding:5px 4px 12px}.hd h1{font-size:clamp(24px,6vw,32px)}}

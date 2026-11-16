@@ -1,4 +1,4 @@
-window.MODS_VERSION = 10;
+window.MODS_VERSION = 11;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -65,23 +65,19 @@ window.MODS = [
     "d": "A arma recebe a propriedade Versátil.\n\nQuando empunhada com as duas mãos, seu dado de dano aumenta em uma categoria (d4 para d6, d6 para d8).\n\n* Só pode ser aplicada a armas que não possuam a propriedade Pesada ou Duas Mãos e cujo dado de dano seja d4, d6 ou d8.",
     "a": false,
     "k": {}
+   },
+   {
+    "n": "Golpes Vita & Mors",
+    "p": "250 po",
+    "d": "**Equilíbrio entre Vida e Morte.** A arma é imbuída com um poder equilibrado entre a vida e a morte.\n\nAntes de realizar uma jogada de ataque, você deve escolher entre os tipos de dano **Radiante** e **Necrótico**. Todo o dano causado por esse ataque é convertido para o tipo escolhido.\n\nSeus ataques críticos com essa arma ignoram a resistência do alvo a dano radiante ou necrótico.\n\n**Mors.** Causar dano necrótico com essa arma fortalece seu corpo. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado causa **1d6 de dano necrótico** adicional.\n\n**Vita.** Causar dano radiante com essa arma fortalece suas defesas. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado concede a você **2d6 pontos de vida temporários**.",
+    "a": true,
+    "k": {}
    }
   ]
  },
  {
   "t": "Armas simples à distância",
-  "m": [
-   {
-    "n": "Canalizador de veneno",
-    "p": "100 po",
-    "d": "Com uma ação bônus, você envenena a próxima munição disparada por essa arma. A munição envenenada utiliza os efeitos e as propriedades do item **Veneno Básico**.\n\n* Isso não gasta frascos de veneno.",
-    "a": true,
-    "k": {
-     "Zarabatana": true,
-     "Funda": false
-    }
-   }
-  ]
+  "m": []
  },
  {
   "t": "Armas marciais corpo a corpo",
@@ -337,6 +333,29 @@ window.MODS = [
     "d": "**Espírito Dançarino.** Você imbui sua arma com um espírito dançarino, capaz de confundir seus adversários com movimentos imprevisíveis.\n\nUma vez por turno, você pode gastar uma utilização para realizar uma jogada de ataque utilizando Carisma (Atuação) no lugar do atributo normalmente utilizado. Ao fazer isso, você distrai o alvo com seus movimentos, recebendo **vantagem na jogada de ataque**.\n\n* Limitação: 2 utilizações por descanso curto.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Serrilha catalizadora de veneno",
+    "p": "300 po",
+    "d": "**Veneno Potencializado.** Enquanto esta arma estiver envenenada, seus ataques causam **+1d4 de dano de veneno** adicional.\n\nVenenos que perdem o efeito após um acerto passam a durar por mais um acerto. Dessa forma, você pode realizar dois acertos com a mesma dose de veneno.\n\nAlém disso, a DT das salvaguardas exigidas pelos venenos aplicados a esta arma aumenta em **+1**.\n\n* Limitação: Esta modificação só pode ser aplicada a armas cortantes ou perfurantes.",
+    "a": true,
+    "k": {
+     "Martelo Leve": false,
+     "Maça": false,
+     "Clava Grande": false,
+     "Clava": false,
+     "Cajado": false,
+     "Malho": false,
+     "Mangual": false,
+     "Martelo de Guerra": false
+    }
+   },
+   {
+    "n": "Espírito guloso",
+    "p": "200 po",
+    "d": "**Espírito Glutão.** A arma é imbuída com um espírito glutão, que devora seus suprimentos em troca de golpes corrosivos.\n\nTodos os ataques realizados com essa arma consomem **1 kg de ração por acerto**.\n\nSeus ataques causam **+1d8 de dano ácido** adicional. Além disso, sempre que uma criatura do seu tamanho ou até uma categoria de tamanho maior sofrer dano ácido dessa arma, deverá realizar uma salvaguarda de Constituição (CD 12). Em caso de falha, sua CA é reduzida em **1 ponto** até o início do seu próximo turno.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -382,6 +401,15 @@ window.MODS = [
     }
    },
    {
+    "n": "Canalizador de veneno",
+    "p": "150 po",
+    "d": "Com uma ação bônus, as próximas 3 munições que forem disparadas por essa arma ficam envenenadas. A munição envenenada utiliza os efeitos e as propriedades do item **Veneno Básico**.\n\nVocê pode usar essa modificação um número de vezes igual ao seu bônus de proficiência.\n\n* Isso não gasta frascos de veneno.\nNão funciona com fundas",
+    "a": true,
+    "k": {
+     "Funda": false
+    }
+   },
+   {
     "n": "Disparos congelantes",
     "p": "300 po",
     "d": "**Disparo Congelante.** Com uma ação bônus, você imbui suas munições com energia gélida. Ao serem disparadas por essa arma, elas causam **+1d6 de dano gélido** adicional.\n\nCriaturas que receberem dano gélido desses disparos têm seu deslocamento reduzido em **3 metros**. Caso o deslocamento de uma criatura seja reduzido a 0, ela deve fazer uma salvaguarda de CON DT 15 ou fica **Paralisada** até o início do seu próximo turno.",
@@ -394,6 +422,13 @@ window.MODS = [
     "d": "O dano da munição disparada agora é mágico.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Canalizador de fogo alquímico",
+    "p": "150 po",
+    "d": "Com uma ação bônus, sua próxima munição disparada com essa arma é imbuída com fogo alquímico, causando 1d4 de dano de fogo extra e deixando o alvo em combustão.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência.\n\n* Isso não gasta frascos de fogo alquímico",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -401,16 +436,16 @@ window.MODS = [
   "t": "Foco arcano/Símbolo sagrado",
   "m": [
    {
-    "n": "Infusão elemental (Varia)",
-    "p": "2000 po",
-    "d": "**Infusão Elemental do Foco Arcano**\n\n* Propriedade especial de foco arcano.*\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe **+1 nas jogadas de ataque mágico** de magias que causam dano de fogo.\n\nO raio da magia **Bola de Fogo** aumenta em **1,5 metro**.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia **Raio de Bruxa** pode se conectar a uma criatura adicional. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar ambas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em **1,5 metro** até o final do turno. Esse efeito é acumulável até 3 vezes.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com **tripla vantagem**.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando **1d6 pontos de vida + seu nível atual**.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível). Em caso de falha, a criatura fica **Amedrontada** até o fim do seu próximo turno.\n\n**Limitação.** Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
+    "n": "Imbuir Paz Eterna",
+    "p": "400 po",
+    "d": "Toda fonte de cura causada pelo seu símbolo sagrado terá um bônus de +1d6",
     "a": true,
     "k": {}
    },
    {
-    "n": "Imbuir Paz Eterna",
-    "p": "400 po",
-    "d": "Toda fonte de cura causada pelo seu símbolo sagrado terá um bônus de +1d6",
+    "n": "Infusão elemental (Varia)",
+    "p": "2000 po",
+    "d": "**Infusão Elemental do Foco Arcano**\n\n* Propriedade especial de foco arcano.*\n\nVocê escolhe um dos elementos a seguir para infundir permanentemente em seu foco arcano. Cada elemento concede propriedades mágicas únicas, aprimorando suas magias de acordo com o elemento escolhido.\n\n**Fogo**\n\nSuas magias que causam dano de fogo fazem com que as criaturas atingidas entrem em combustão por 2 turnos.\n\nAlém disso, você recebe **+1 nas jogadas de ataque mágico** de magias que causam dano de fogo.\n\nO raio da magia **Bola de Fogo** aumenta em **1,5 metro**.\n\n**Raio**\n\nSuas magias que causam dano elétrico propagam-se entre os inimigos como correntes elétricas, impedindo as criaturas atingidas de realizar reações.\n\nA magia **Raio de Bruxa** pode se conectar a uma criatura adicional. Você mantém uma única concentração e utiliza apenas uma ação bônus para ativar ambas as conexões.\n\nSempre que causar dano elétrico a uma criatura, seu deslocamento aumenta em **1,5 metro** até o final do turno. Esse efeito é acumulável até 3 vezes.\n\n**Ácido**\n\nSuas magias que causam dano ácido reduzem a CA da criatura atingida em um valor igual ao nível da magia conjurada, até uma redução máxima de 4 pontos. Esse efeito permanece até o início do seu próximo turno.\n\nAlém disso, suas rolagens de dano ácido são realizadas com **tripla vantagem**.\n\n**Necrótico**\n\nVocê drena a essência vital de criaturas vivas à beira da morte. Quando causar dano necrótico que reduza uma criatura a 0 pontos de vida, você pode, uma vez por turno, absorver sua essência vital, recuperando **1d6 pontos de vida + seu nível atual**.\n\nAlém disso, ao causar dano necrótico a uma criatura que esteja com metade dos pontos de vida ou menos, ela deve realizar uma salvaguarda de Sabedoria (CD 6 + seu nível). Em caso de falha, a criatura fica **Amedrontada** até o fim do seu próximo turno.\n\n**Limitação.** Cada foco arcano pode receber essa infusão elemental no máximo duas vezes.",
     "a": true,
     "k": {}
    },

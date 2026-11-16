@@ -1,4 +1,4 @@
-window.MODS_VERSION = 11;
+window.MODS_VERSION = 12;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -155,6 +155,13 @@ window.MODS = [
      "Rapieira": false,
      "Tridente": false
     }
+   },
+   {
+    "n": "Arma gigantesca",
+    "p": "500 po",
+    "d": "A categoria do dado de dano da arma aumenta em dois níveis, até o máximo de **1d20**. Por exemplo: 1d8 passa a ser 1d10, 1d10 passa a ser 1d12 e 1d12 passa a ser 1d16.\n\nA arma recebe a propriedade **Extensão**.\n\nO peso total da arma é dobrado.\n\nSe você for de tamanho **Grande ou maior**, recebe vantagem na primeira jogada de ataque realizada com essa arma em cada turno. Além disso, esse ataque causa **+2d6 de dano adicional** do mesmo tipo de dano da arma.\n\nSe você for de tamanho normal, precisa possuir pelo menos **18 em Força** para empunhar adequadamente essa arma. Caso contrário, realiza as jogadas de ataque com ela com desvantagem.",
+    "a": false,
+    "k": {}
    }
   ]
  },

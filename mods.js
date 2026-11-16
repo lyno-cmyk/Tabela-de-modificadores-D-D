@@ -188,6 +188,13 @@ window.MODS = [
     "k": {
      "Zarabatana": false
     }
+   },
+   {
+    "n": "Espírito Guijarro",
+    "p": "450 po",
+    "d": "A arma é imbuída com um espírito musical de rock pesado, que reage ao ritmo da música durante o combate.\n\nSempre que houver uma batida pesada soando nas proximidades da arma, antes de realizar um ataque, você deve rolar **3d6** para determinar o efeito desencadeado.\n\n- Sequência: Caso obtenha três números consecutivos diferentes (por exemplo: 1, 2 e 3), você dilacera seus inimigos no ritmo da música, realizando **um ataque adicional**. Esse ataque não adiciona seu modificador de atributo à rolagem de dano.\n\n- Dois números iguais: Caso obtenha exatamente dois resultados iguais, seu ataque causa **+1d10 de dano de fogo** adicional e deixa o alvo em **Combustão** por 2 turnos.\n\n- Três números iguais: Caso obtenha três resultados iguais, você sincroniza seu ataque com uma batida forte da música, causando **3d6 de dano trovejante** ao alvo. Ele também deve realizar uma salvaguarda de Destreza (CD 10 + seu nível de Bardo). Em caso de falha, é arremessado a **4,5 metros** para longe de você e fica **Caído**.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -356,6 +363,13 @@ window.MODS = [
     "d": "**Espírito Glutão.** A arma é imbuída com um espírito glutão, que devora seus suprimentos em troca de golpes corrosivos.\n\nTodos os ataques realizados com essa arma consomem **1 kg de ração por acerto**.\n\nSeus ataques causam **+1d8 de dano ácido** adicional. Além disso, sempre que uma criatura do seu tamanho ou até uma categoria de tamanho maior sofrer dano ácido dessa arma, deverá realizar uma salvaguarda de Constituição (CD 12). Em caso de falha, sua CA é reduzida em **1 ponto** até o início do seu próximo turno.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Fúria do Dragão roxo",
+    "p": "400 po",
+    "d": "A arma é imbuída com as escamas de um dragão roxo.\n\nAo errar um ataque cuja jogada seja 5 ou menos, role **1d4**. Caso obtenha um resultado 4, você pode repetir a jogada de ataque com **vantagem**.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -426,7 +440,7 @@ window.MODS = [
    {
     "n": "Canalizador de fogo alquímico",
     "p": "150 po",
-    "d": "Com uma ação bônus, sua próxima munição disparada com essa arma é imbuída com fogo alquímico, causando 1d4 de dano de fogo extra e deixando o alvo em combustão.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência.\n\n* Isso não gasta frascos de fogo alquímico",
+    "d": "**Munição Incendiária.** Com uma ação bônus, você imbui sua próxima munição disparada com essa arma com fogo alquímico, causando **1d10 de dano de fogo** adicional e deixando o alvo em combustão por 2 turnos.\n\nVocê pode utilizar essa habilidade um número de vezes igual ao seu **bônus de proficiência**. Todas as utilizações são recuperadas após um descanso longo.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência. Recupera as cargas num descanso  longo\n\n* Observação: Essa habilidade não consome frascos de Fogo Alquímico.",
     "a": true,
     "k": {}
    }
@@ -453,6 +467,13 @@ window.MODS = [
     "n": "Loucura à beira da morte",
     "p": "300 po",
     "d": "**Infusão de Fé.** Suas magias de cura agora podem ter seus dados de cura dobrados, mas isso envolve um risco.\n\nUma vez por turno, ao conjurar uma magia de cura, você deve realizar um teste de perícia de Religião. A DT é igual a **12 + o nível da magia conjurada**. Em caso de sucesso, você dobra a quantidade de dados de cura rolados pela magia.\n\nCaso falhe no teste, a magia de cura é completamente anulada. Entretanto, se falhar por 5 pontos ou menos, a magia é convertida em dano necrótico.\n\n* Limitação: Disponível apenas para símbolos sagrados.\n\n* Limitação: Permite apenas uma única instância de cura por turno.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Fogo da cremação",
+    "p": "300 po",
+    "d": "Após conjurar uma magia que cause dano de fogo, você pode optar por transformar suas chamas em fogo azul, aumentando o dano da magia em uma quantidade de dados igual à metade dos dados de dano originais. Por exemplo, uma magia **Bola de Fogo** que cause 8d6 de dano passa a causar 12d6.\n\nApós utilizar essa habilidade, você deve realizar uma salvaguarda de Constituição (CD 10 + o nível da magia conjurada). Em caso de falha, você sofre dano igual à quantidade de dano adicional concedida à magia. Em caso de sucesso, sofre apenas metade desse dano.\n\nDano de fogo causado por você deixa alvos em **Combustão** por 1 turno.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência e você recupera os usos em um descanso curto.\n\n* Somente em focos arcanos",
     "a": true,
     "k": {}
    }

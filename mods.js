@@ -1,4 +1,4 @@
-window.MODS_VERSION = 12;
+window.MODS_VERSION = 13;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -69,7 +69,7 @@ window.MODS = [
    {
     "n": "Golpes Vita & Mors",
     "p": "250 po",
-    "d": "**Equilíbrio entre Vida e Morte.** A arma é imbuída com um poder equilibrado entre a vida e a morte.\n\nAntes de realizar uma jogada de ataque, você deve escolher entre os tipos de dano **Radiante** e **Necrótico**. Todo o dano causado por esse ataque é convertido para o tipo escolhido.\n\nSeus ataques críticos com essa arma ignoram a resistência do alvo a dano radiante ou necrótico.\n\n**Mors.** Causar dano necrótico com essa arma fortalece seu corpo. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado causa **1d6 de dano necrótico** adicional.\n\n**Vita.** Causar dano radiante com essa arma fortalece suas defesas. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado concede a você **2d6 pontos de vida temporários**.",
+    "d": "**Equilíbrio entre Vida e Morte.** A arma é imbuída com um poder equilibrado entre a vida e a morte.\n\nAntes de realizar uma jogada de ataque, você deve escolher entre os tipos de dano **Radiante** e **Necrótico**. Todo o dano causado por esse ataque é convertido para o tipo escolhido.\n\nSeus ataques críticos com essa arma ignoram a resistência do alvo a dano radiante ou necrótico.\n\n**Mors.** Causar dano necrótico com essa arma fortalece seu corpo. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado ou com arma marcial causa **1d6 de dano necrótico** adicional.\n\n**Vita.** Causar dano radiante com essa arma fortalece suas defesas. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado ou com arma marcial concede a você **2d6 pontos de vida temporários**.",
     "a": true,
     "k": {}
    }
@@ -190,7 +190,7 @@ window.MODS = [
    {
     "n": "Disparo Ricocheteante",
     "p": "200 po",
-    "d": "Sempre que o resultado da rolagem de dano da arma for par, o disparo ricocheteia uma vez em direção a outro inimigo próximo do alvo inicial, desde que esteja a até **6 metros** dele. O ricochete realiza uma nova jogada de ataque, sem adicionar seu bônus de proficiência.\n\n* O ricochete não causa dano de ataque furtivo.",
+    "d": "Sempre que o resultado da rolagem de dano da arma for par, o disparo ricocheteia uma vez em direção a outro inimigo próximo do alvo inicial, desde que esteja a até **6 metros** dele. O ricochete realiza uma nova jogada de ataque, sem adicionar seu bônus de proficiência.\n\nO ricochete só acontece uma vez por turno.\n\n* O ricochete não causa dano de ataque furtivo.",
     "a": true,
     "k": {
      "Zarabatana": false
@@ -391,6 +391,13 @@ window.MODS = [
     "k": {}
    },
    {
+    "n": "Rearme semiautomático",
+    "p": "150 po",
+    "d": "Uma vez por turno, você pode optar por realizar um teste de Prestidigitação (CD 10 + o bônus de ataque da arma). Em caso de sucesso, você ignora a propriedade **Recarga** da arma.\n\n* Limitação: Esta modificação só pode ser aplicada a bestas e armas de fogo.",
+    "a": false,
+    "k": {}
+   },
+   {
     "n": "Riser quadruplo",
     "p": "200 po",
     "d": "O riser do seu arco agora segura até 4 flechas de uma vez.\nUma vez por descanso curto, você pode optar por trocar um dos seus ataques por um disparo múltiplo:\n1 flecha: ataque normal\n2 flechas: -1d2 em cada ataque\n3 flechas: -1d4 em cada ataque\n4 flechas: Desvantagem **absoluta** em todos os ataques\n\n* Disponível somente para arcos\n*Absoluto(a): Que não tem como mudar de forma alguma",
@@ -481,6 +488,13 @@ window.MODS = [
     "n": "Fogo da cremação",
     "p": "300 po",
     "d": "Após conjurar uma magia que cause dano de fogo, você pode optar por transformar suas chamas em fogo azul, aumentando o dano da magia em uma quantidade de dados igual à metade dos dados de dano originais. Por exemplo, uma magia **Bola de Fogo** que cause 8d6 de dano passa a causar 12d6.\n\nApós utilizar essa habilidade, você deve realizar uma salvaguarda de Constituição (CD 10 + o nível da magia conjurada). Em caso de falha, você sofre dano igual à quantidade de dano adicional concedida à magia. Em caso de sucesso, sofre apenas metade desse dano.\n\nDano de fogo causado por você deixa alvos em **Combustão** por 1 turno.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência e você recupera os usos em um descanso curto.\n\n* Somente em focos arcanos",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Abandono dos deuses",
+    "p": "500 po",
+    "d": "**Você não está mais conectado à sua divindade.** Agora, suas magias emanam diretamente do símbolo sagrado que foi violado.\n\nCriaturas que tentarem detectar sua natureza mágica ou identificar sua ligação divina não conseguirão reconhecer sua antiga divindade. Em vez disso, o símbolo emana uma aura necrótica.\n\nAo conjurar uma magia que exija uma salvaguarda do alvo, ele deve realizar a rolagem com desvantagem.\n\nVocê pode converter, à sua escolha, qualquer dano radiante causado por suas magias em dano necrótico.\n\n**Cura Corrompida.** Sempre que conjurar uma magia ou utilizar uma habilidade que restaure pontos de vida, a quantidade de cura é determinada com vantagem. Entretanto, você deve realizar um teste de Medicina (CD 10). Em caso de falha, a cura é completamente anulada.\n\nQuando uma magia sua restaurar PV de uma criatura, você pode escolher causar dano necrótico a outra criatura a até 9 metros do alvo, em quantidade igual ao seu bônus de proficiência.\n\nCriaturas mortas-vivas atingidas por suas magias de cura recebem a quantidade de cura como dano necrótico, em vez de recuperar PV.\n\n* Limitação: Só pode ser aplicada a símbolos sagrados.",
     "a": true,
     "k": {}
    }
@@ -580,6 +594,25 @@ window.MODS = [
     "n": "Eco do guardião",
     "p": "700 po",
     "d": "Um laço mágico liga a armadura àqueles que você jurou proteger.\n\nQuando uma criatura que você possa ver a até **9 metros** for alvo de um ataque, você pode usar sua reação para **trocar de lugar com ela** e se tornar o alvo do ataque, recebendo **+2 na CA** contra ele. Se o ataque ainda assim acertar, você tem **resistência** ao dano.\n\n* Limitação: 2 utilizações por descanso longo.",
+    "a": true,
+    "k": {}
+   }
+  ]
+ },
+ {
+  "t": "Tatuagens arcanas",
+  "m": [
+   {
+    "n": "Símbolo da águia suicida",
+    "p": "400 po",
+    "d": "Você sofre 8d6 a menos de dano contundente causado por quedas.\n\nCaso possua deslocamento de voo, ele aumenta em 3 metros.\n\nAo sintonizar-se com esta tatuagem, você recebe o seguinte benefício:\n\nProteção contra Quedas. Uma vez por descanso longo, quando seus pontos de vida forem reduzidos a 0 devido a dano de queda, você permanece imediatamente com 1 ponto de vida em vez disso.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Símbolo do Esgrimista dimensional",
+    "p": "300 po",
+    "d": "**Empurrão Dimensional.** Ao causar dano a um inimigo a até **1,5 metro** de você, pode gastar uma ação bônus para tentar empurrá-lo para longe. O alvo deve ser bem-sucedido em uma salvaguarda de Força (CD 10) ou será empurrado em até **6 metros**, na direção de sua escolha, e ficará **Caído**.\n\nCaso o resultado do d20 do alvo seja 5 ou mais pontos abaixo da CD, você pode se teletransportar para um espaço desocupado a até **1,5 metro** do alvo empurrado.\n\n**Benefícios da Sintonização.** Ao sintonizar-se com esta tatuagem, você recebe os seguintes benefícios:\n\nVocê recebe **+2 na CA** enquanto houver apenas um inimigo a até **3 metros** de você.\n\n**Investida Avassaladora.** Duas vezes por descanso curto, você pode realizar uma investida contra um inimigo a até **4,5 metros** de distância, utilizando uma arma corpo a corpo. Ao fazer isso, você avança em direção ao alvo e recebe **+1d4 na jogada de ataque**. Caso acerte, causa **+1d6 de dano adicional** do mesmo tipo de dano da arma.\n\nA CD do **Empurrão Dimensional** aumenta para 15.",
     "a": true,
     "k": {}
    }

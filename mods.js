@@ -1,4 +1,4 @@
-window.MODS_VERSION = 13;
+window.MODS_VERSION = 14;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -70,6 +70,20 @@ window.MODS = [
     "n": "Golpes Vita & Mors",
     "p": "250 po",
     "d": "**Equilíbrio entre Vida e Morte.** A arma é imbuída com um poder equilibrado entre a vida e a morte.\n\nAntes de realizar uma jogada de ataque, você deve escolher entre os tipos de dano **Radiante** e **Necrótico**. Todo o dano causado por esse ataque é convertido para o tipo escolhido.\n\nSeus ataques críticos com essa arma ignoram a resistência do alvo a dano radiante ou necrótico.\n\n**Mors.** Causar dano necrótico com essa arma fortalece seu corpo. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado ou com arma marcial causa **1d6 de dano necrótico** adicional.\n\n**Vita.** Causar dano radiante com essa arma fortalece suas defesas. Sempre que obtiver o resultado máximo ou mínimo no dado de dano da arma, seu próximo ataque desarmado ou com arma marcial concede a você **2d6 pontos de vida temporários**.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Ponta de contenção",
+    "p": "150 po",
+    "d": "Uma ponta curta e uma argola de ferro travam as articulações de quem tenta fugir.\n\nQuando você acertar um **ataque de oportunidade** com esta arma, o deslocamento do alvo é reduzido **pela metade** até o final do turno atual.\n\n* Não acumula com outros efeitos que reduzam deslocamento.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Ressonância de truque",
+    "p": "250 po",
+    "d": "**Ressonância.** A arma vibra em sintonia com as magias mais simples, servindo de conduíte para elas.\n\nUma vez por turno, depois de conjurar um truque, o primeiro ataque com esta arma que você acertar até o final do seu turno causa **+1d4 de dano adicional** do mesmo tipo de dano do truque (ou **de força**, caso o truque não cause dano).\n\n* Pode ser aplicada a qualquer arma simples corpo a corpo.",
     "a": true,
     "k": {}
    }
@@ -162,6 +176,20 @@ window.MODS = [
     "d": "A categoria do dado de dano da arma aumenta em dois níveis, até o máximo de **1d20**. Por exemplo: 1d8 passa a ser 1d10, 1d10 passa a ser 1d12 e 1d12 passa a ser 1d16.\n\nA arma recebe a propriedade **Extensão**.\n\nO peso total da arma é dobrado.\n\nSe você for de tamanho **Grande ou maior**, recebe vantagem na primeira jogada de ataque realizada com essa arma em cada turno. Além disso, esse ataque causa **+2d6 de dano adicional** do mesmo tipo de dano da arma.\n\nSe você for de tamanho normal, precisa possuir pelo menos **18 em Força** para empunhar adequadamente essa arma. Caso contrário, realiza as jogadas de ataque com ela com desvantagem.",
     "a": false,
     "k": {}
+   },
+   {
+    "n": "Golpe de varredura",
+    "p": "200 po",
+    "d": "Um peso bem distribuído mantém o impulso do golpe depois que ele encontra o alvo.\n\nUma vez por turno, quando você **reduzir uma criatura a 0 pontos de vida** com esta arma ou **causar um acerto crítico**, você pode realizar um ataque adicional contra outra criatura a até **1,5 metro** do alvo original e dentro do alcance da arma. Esse ataque não adiciona seu modificador de atributo à rolagem de dano.\n\n* Não funciona com ataques de oportunidade.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Lâmina quebra-foco",
+    "p": "300 po",
+    "d": "**Fio Dissonante.** O gume emite uma nota inaudível que desfaz o raciocínio de conjuradores.\n\nQuando você acertar uma criatura que esteja **concentrada em uma magia**, ela sofre **+1d6 de dano de força** e realiza a salvaguarda de concentração com **Desvantagem**.\n\n* Esse efeito pode ocorrer uma vez por turno.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -200,6 +228,22 @@ window.MODS = [
     "n": "Espírito Guijarro",
     "p": "450 po",
     "d": "A arma é imbuída com um espírito musical de rock pesado, que reage ao ritmo da música durante o combate.\n\nSempre que houver uma batida pesada soando nas proximidades da arma, antes de realizar um ataque, você deve rolar **3d6** para determinar o efeito desencadeado.\n\n- Sequência: Caso obtenha três números consecutivos diferentes (por exemplo: 1, 2 e 3), você dilacera seus inimigos no ritmo da música, realizando **um ataque adicional**. Esse ataque não adiciona seu modificador de atributo à rolagem de dano.\n\n- Dois números iguais: Caso obtenha exatamente dois resultados iguais, seu ataque causa **+1d10 de dano de fogo** adicional e deixa o alvo em **Combustão** por 2 turnos.\n\n- Três números iguais: Caso obtenha três resultados iguais, você sincroniza seu ataque com uma batida forte da música, causando **3d6 de dano trovejante** ao alvo. Ele também deve realizar uma salvaguarda de Destreza (CD 10 + seu nível de Bardo). Em caso de falha, é arremessado a **4,5 metros** para longe de você e fica **Caído**.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Coronha reforçada / Limbo reforçado",
+    "p": "150 po",
+    "d": "Reforços metálicos na coronha ou nas pontas do arco permitem lutar de perto sem largar a arma.\n\nVocê não sofre **Desvantagem** em ataques à distância com esta arma contra criaturas a até 1,5 metro.\n\nAlém disso, uma vez por turno, quando uma criatura entrar em um espaço a até **1,5 metro** de você, você pode usar sua reação para golpeá-la, causando **1d4 de dano contundente + seu modificador de Força ou Destreza (o maior)**. Se ela for de tamanho Grande ou menor, deve realizar uma salvaguarda de Força (CD = 8 + seu bônus de proficiência + seu modificador de Força ou Destreza, o maior) ou será empurrada **1,5 metro**.\n\n* Não pode ser aplicada a zarabatanas.",
+    "a": false,
+    "k": {
+     "Zarabatana": false
+    }
+   },
+   {
+    "n": "Salto de disparo",
+    "p": "300 po",
+    "d": "**Passo Espectral.** O disparo deixa um rastro de energia que você pode seguir.\n\nUma vez por turno, depois de realizar um ataque com esta arma, você pode se teletransportar até **4,5 metros** para um espaço desocupado que possa ver. Esse movimento não provoca ataques de oportunidade e não gasta deslocamento.\n\nVocê pode usar essa propriedade um número de vezes igual ao seu **bônus de proficiência**. Recupera as cargas num descanso longo.",
     "a": true,
     "k": {}
    }
@@ -377,6 +421,20 @@ window.MODS = [
     "d": "A arma é imbuída com as escamas de um dragão roxo.\n\nAo errar um ataque cuja jogada seja 5 ou menos, role **1d4**. Caso obtenha um resultado 4, você pode repetir a jogada de ataque com **vantagem**.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Golpe sinalizador",
+    "p": "150 po",
+    "d": "Um símbolo pintado na lâmina deixa uma marca clara no inimigo, guiando o ataque dos seus aliados.\n\nUma vez por turno, quando você acertar um ataque com esta arma, o alvo fica **marcado** até o início do seu próximo turno. O primeiro aliado que realizar uma jogada de ataque contra a criatura marcada recebe **+1d4** nessa jogada.\n\n* A marca não se acumula.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Lâmina de absorção",
+    "p": "350 po",
+    "d": "**Aparo Arcano.** A lâmina devora a energia que normalmente atravessaria qualquer defesa.\n\nUma vez por descanso curto ou longo, quando uma criatura fizer uma **jogada de ataque de magia** contra você, você pode usar sua reação para receber **+4 na CA** contra esse ataque.\n\nSe o ataque errar, a arma armazena a energia: seu próximo acerto com ela, até o final do seu próximo turno, causa **+1d8 de dano** do mesmo tipo de dano da magia.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -457,6 +515,23 @@ window.MODS = [
     "d": "**Munição Incendiária.** Com uma ação bônus, você imbui sua próxima munição disparada com essa arma com fogo alquímico, causando **1d10 de dano de fogo** adicional e deixando o alvo em combustão por 2 turnos.\n\nVocê pode utilizar essa habilidade um número de vezes igual ao seu **bônus de proficiência**. Todas as utilizações são recuperadas após um descanso longo.\n\nVocê pode usar isso um número de vezes igual ao seu bônus de proficiência. Recupera as cargas num descanso  longo\n\n* Observação: Essa habilidade não consome frascos de Fogo Alquímico.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Abafador de disparo",
+    "p": "150 po",
+    "d": "Cordas e câmaras forradas de feltro eliminam o estalo do disparo.\n\nQuando você atacar com esta arma enquanto estiver **Escondido**, faça um teste de Destreza (Furtividade) contra a Percepção passiva de cada criatura que não podia ver você. Cada criatura que falhar não percebe de onde veio o ataque, e você continua Escondido em relação a ela, mesmo após acertar ou errar.\n\n* Não pode ser aplicada a armas de pólvora.",
+    "a": false,
+    "k": {
+     "Mosquete": false,
+     "Pistola": false
+    }
+   },
+   {
+    "n": "Disparo restaurador",
+    "p": "400 po",
+    "d": "**Munição Benéfica.** Ao deixar a arma, a munição se converte em energia vital.\n\nEm vez de realizar um dos seus ataques, você pode disparar contra um aliado que possa ver, dentro do alcance normal da arma. Não há jogada de ataque: ele recupera **1d6 + seu bônus de proficiência** pontos de vida.\n\nVocê pode usar essa propriedade um número de vezes igual ao seu **bônus de proficiência**. Recupera as cargas num descanso longo.\n\n* Gasta uma munição normalmente.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -530,6 +605,20 @@ window.MODS = [
     "d": "Com uma ação bônus, você se dissolve em névoa e reaparece em um espaço desocupado que possa ver a até **9 metros**.\n\nAté o fim do seu próximo turno, você tem **Vantagem em testes de Destreza (Furtividade)** e em **salvaguardas de Destreza**.\n\n* Limitação: 1 utilização por descanso curto ou longo.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Forro de viajante",
+    "p": "150 po",
+    "d": "Camadas de lã, couro oleado e fibras respiráveis mantêm você seco e confortável em qualquer terreno.\n\nVocê não sofre os efeitos de frio ou calor extremos (nenhuma salvaguarda é exigida) e tem **Vantagem em salvaguardas de Constituição** para evitar Exaustão causada por marcha forçada.\n\nDurante viagens, terreno difícil não mágico não reduz o seu ritmo de viagem.\n\n* Pode ser aplicada a qualquer armadura leve. Não afeta frio ou calor de origem mágica.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Costura de concentração",
+    "p": "350 po",
+    "d": "**Fios de Foco.** Fios encantados pulsam em sincronia com a sua respiração, mantendo a mente firme sob pressão.\n\nVocê tem **Vantagem em salvaguardas de Constituição** para manter a concentração em magias. Uma vez por descanso longo, ao falhar em uma dessas salvaguardas, você pode repeti-la e ficar com o novo resultado.\n\nContrapartida: enquanto estiver concentrado em uma magia, a armadura emite **luz fraca em um raio de 1,5 metro**, o que impõe **Desvantagem** nos seus testes de Destreza (Furtividade).\n\n* A Vantagem não acumula com outras fontes de Vantagem na mesma salvaguarda.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -563,6 +652,20 @@ window.MODS = [
     "d": "Um bolso extradimensional é costurado ao forro da armadura. Ele guarda até **30 kg** de itens, e eles não contam para a sua capacidade de carga.\n\nVocê pode guardar ou recuperar um item com a ação de **Usar Objeto**.\n\n* Criaturas vivas não podem ser guardadas. Se a armadura for destruída, os itens caem em um espaço adjacente.",
     "a": true,
     "k": {}
+   },
+   {
+    "n": "Placas deflectoras",
+    "p": "250 po",
+    "d": "Placas levemente curvas, dispostas em ângulo, desviam projéteis para longe dos pontos vitais.\n\nUma vez por descanso curto ou longo, quando você for atingido por um **ataque com arma à distância** (disparo ou arremesso), você pode usar sua reação para reduzir o dano em **1d10 + seu bônus de proficiência**.\n\n* Apenas para armaduras médias. Não funciona contra magias nem contra ataques corpo a corpo.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Escamas adaptativas",
+    "p": "600 po",
+    "d": "**Adaptação.** A armadura estuda cada ferida e se reorganiza para que a mesma dor não seja sentida duas vezes.\n\nUma vez por descanso curto ou longo, quando você sofrer dano de **fogo, gélido, elétrico, ácido, trovejante ou venenoso**, você pode usar sua reação para receber **resistência àquele tipo de dano** (inclusive ao dano que desencadeou a reação) por **1 minuto**.\n\nA armadura só se adapta a um tipo por vez. Uma nova adaptação substitui a anterior.\n\n* Apenas para armaduras médias.",
+    "a": true,
+    "k": {}
    }
   ]
  },
@@ -594,6 +697,20 @@ window.MODS = [
     "n": "Eco do guardião",
     "p": "700 po",
     "d": "Um laço mágico liga a armadura àqueles que você jurou proteger.\n\nQuando uma criatura que você possa ver a até **9 metros** for alvo de um ataque, você pode usar sua reação para **trocar de lugar com ela** e se tornar o alvo do ataque, recebendo **+2 na CA** contra ele. Se o ataque ainda assim acertar, você tem **resistência** ao dano.\n\n* Limitação: 2 utilizações por descanso longo.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Brasão de desafio",
+    "p": "350 po",
+    "d": "Um brasão reluzente no peitoral atrai o olhar e a ira dos inimigos.\n\nCom uma **ação bônus**, escolha uma criatura a até **9 metros** que possa ver ou ouvir você. Até o início do seu próximo turno, ela tem **Desvantagem** em jogadas de ataque contra qualquer alvo que não seja você.\n\nO efeito termina se você ficar Incapacitado. Duas utilizações por descanso curto ou longo.\n\n* Apenas para armaduras pesadas. Não afeta criaturas que não possam ver ou ouvir você.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Placas capacitoras",
+    "p": "550 po",
+    "d": "**Capacitor de Impacto.** Cristais ocos entre as placas convertem a energia de cada golpe recebido em carga arcana.\n\nUma vez por rodada, quando você sofrer dano de qualquer fonte, a armadura ganha **1 carga** (máximo de **3**). Ao acertar um ataque com arma, você pode gastar todas as cargas para causar **+1d6 de dano de força por carga**.\n\nAs cargas se dissipam ao fim do combate ou após 1 minuto.\n\n* Apenas para armaduras pesadas.",
     "a": true,
     "k": {}
    }

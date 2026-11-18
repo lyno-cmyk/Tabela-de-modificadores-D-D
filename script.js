@@ -39,7 +39,9 @@ tb.addEventListener('click',e=>{var tr=e.target.closest('tr'),r=rows.filter(x=>x
 function setOpen(m,on){m.classList.toggle('open',on);var h=m.querySelector('h3');if(h)h.setAttribute('aria-expanded',on?'true':'false')}
 var narrow=()=>matchMedia('(max-width:700px)').matches;
 function toggleMod(m,x){var open=m.classList.contains('open');if(open){setOpen(m,false);desel()}else{[].forEach.call(cols.querySelectorAll('.m.open'),o=>{if(o!==m)setOpen(o,false)});setOpen(m,true);if(x!=null)lastX=x;if(narrow())desel();else show(m)}
-sched();requestAnimationFrame(()=>requestAnimationFrame(()=>reveal(m)))}
+sched();requestAnimationFrame(()=>requestAnimationFrame(()=>reveal(m)));
+/* o cartão pode ter mudado de coluna/página: coloca o painel lateral do lado oposto de onde ele realmente ficou */
+setTimeout(()=>{if(sel!==m||!m.isConnected||narrow())return;var b=m.getBoundingClientRect(),want=(b.left+b.width/2)>innerWidth/2?'l':'r';if(!sb.classList.contains(want)){lastX=b.left+b.width/2;show(m,0)}},420)}
 /* se o cartão aberto passou para outra página, vai até ela */
 function reveal(m){if(!m.isConnected||m.hidden||stride<=0)return;var r=m.getBoundingClientRect(),v=vp.getBoundingClientRect(),p=Math.floor((r.left-v.left+page*stride+4)/stride);if(p!==page&&p>=0&&p<pages)go(p)}
 document.addEventListener('click',e=>{var t=e.target;if(!t.closest||t.closest('#sb,#ov,.ib,.ft,#sp,.grip'))return;var cbt=t.closest('.cmpb');if(cbt){lastX=e.clientX;show(cbt.closest('.m'));return}var m=t.closest('.m');
@@ -87,7 +89,7 @@ eb.onclick=()=>{var t='window.MODS_VERSION = '+(+VER+1)+';\nwindow.MODS = '+JSON
 var vp=document.querySelector('.vp'),pgn=document.getElementById('pgn'),pv=document.getElementById('prev'),nx=document.getElementById('next'),GAP=30,page=0,pages=1,stride=0,raf=0;
 function go(p,inst){page=Math.max(0,Math.min(pages-1,p));cols.style.transition=inst?'none':'';cols.style.transform='translateX('+(-page*stride)+'px)';pgn.textContent=(page+1)+' / '+pages;pv.disabled=page<=0;nx.disabled=page>=pages-1}
 function layout(){var W=vp.clientWidth,H=vp.clientHeight;if(W<=0||H<=0)return;var mc=(parseFloat(getComputedStyle(document.body).fontSize)||14)*23.5,n=Math.max(1,Math.min(5,Math.floor((W+GAP)/(mc+GAP)))),cw=(W-(n-1)*GAP)/n,c=cols.style;
-c.transition='none';c.transform='none';c.width=W+'px';c.height=H+'px';c.columnCount=n;c.columnWidth=(Math.floor(cw*100)/100)+'px';c.columnGap=GAP+'px';
+c.transition='none';c.transform='none';c.width=W+'px';c.height=H+'px';c.setProperty('--vph',(H-4)+'px');c.columnCount=n;c.columnWidth=(Math.floor(cw*100)/100)+'px';c.columnGap=GAP+'px';
 var total=Math.max(1,Math.round((vp.scrollWidth+GAP)/(cw+GAP)));pages=Math.max(1,Math.ceil(total/n));stride=W+GAP;go(page,true)}
 function sched(){cancelAnimationFrame(raf);raf=requestAnimationFrame(refresh)}
 new MutationObserver(sched).observe(cols,{childList:true,subtree:true,characterData:true});

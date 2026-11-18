@@ -162,3 +162,7 @@ body.qs .m{break-inside:avoid}
 .cmpb{display:none;margin-top:4px;width:100%;padding:7px 10px;font:inherit;font-size:.93em;border:1px solid #a87936;border-radius:3px;background:linear-gradient(145deg,#fff4d8,#e4cf9d);color:#67351f;cursor:pointer}
 .m.arc .cmpb{border-color:#477b5c;color:#285a43}
 @media(max-width:700px){.m.open .cmpb{display:block}}
+
+/* cartão aberto maior que a coluna: limita à altura da página e rola por dentro (nada fica cortado) */
+.m.open,body.qs .m{max-height:var(--vph,70vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#a87936 transparent}
+.m.open h3{position:sticky;top:-10px;z-index:1;background:inherit;margin-top:-4px;padding-top:4px}

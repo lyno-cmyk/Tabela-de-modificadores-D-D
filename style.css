@@ -194,3 +194,18 @@ body.qs .m{break-inside:avoid}
 .sp{bottom:calc(var(--pad)*.85 + 56px)}
 @media(max-height:560px){.ft{min-height:calc(34px + 6px + 6px + 1px)}.sp{bottom:calc(10px + 48px)}}
 @media(max-width:700px){.sp{bottom:calc(18px + 56px)}}
+
+/* ===== Página mais estreita: sobra espaço nas laterais para artes e painel; colunas não se mexem ===== */
+:root{--pw:min(calc(var(--fs)*52),100vw);--gut:calc((100vw - var(--pw))/2 - 10px)}
+@media(min-width:701px){
+ .page{max-width:var(--pw)}
+ .cols{max-width:none}
+ body[data-sb] .cols{max-width:none;margin-left:auto;margin-right:auto}
+}
+@media(min-width:1200px){
+ /* painel de armas ocupa a lateral direita; arte preenche a lateral esquerda */
+ #sb{width:var(--gut);max-width:none;font-size:calc(var(--fs)*.7)}
+ #artwork{width:var(--gut);background-size:cover;background-position:center top;mask-image:none;-webkit-mask-image:none;transform:none;transition:opacity .6s ease}
+ #artwork.on{opacity:.95}
+ #artwork.left{left:0;right:auto}#artwork.right{right:0;left:auto}
+}

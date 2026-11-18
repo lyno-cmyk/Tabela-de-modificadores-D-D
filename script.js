@@ -2,7 +2,7 @@
 var D=window.WEAPONS,A=window.ARMORS||{};
 var GN={SC:'Simples · corpo a corpo',SD:'Simples · à distância',MC:'Marciais · corpo a corpo',MD:'Marciais · à distância'};
 var AN={L:'Armadura leve (1 minuto para vestir ou despir)',M:'Armadura média (5 minutos para vestir e 1 minuto para despir)',P:'Armadura pesada (10 minutos para vestir e 5 minutos para despir)',E:'Escudo (ação Usar Objeto para equipar ou desequipar)'},AC={L:'leve',M:'média',P:'pesada',E:'escudo'};
-var R={'cano duplo':w=>/^(Mosquete|Pistola)$/.test(w.n),'linha tripla':w=>/^(Arco|Besta)/.test(w.n),'empunhadura leve':w=>!w.duas&&!w.pes&&!w.leve,'haste de arremesso':w=>!w.duas&&!w.pes&&!w.arr,'empunhadura versátil':w=>!w.duas&&!w.pes&&!w.vers&&w.s<=(w.t=='S'?8:10),'gume serrilhado':w=>w.tp=='Cortante','pomo de impacto':w=>w.tp!='Contundente','ponta perfurante reforçada':w=>w.tp=='Perfurante','cabo alongado':w=>!w.ext};
+var R={'cano duplo':w=>/^(Mosquete|Pistola)$/.test(w.n),'linha tripla':w=>/^(Arco|Besta)/.test(w.n),'empunhadura leve':w=>!w.duas&&!w.pes&&!w.leve,'haste de arremesso':w=>!w.duas&&!w.pes&&!w.arr,'empunhadura versátil':w=>!w.duas&&!w.pes&&!w.vers&&w.s<=(w.t=='S'?8:10),'gume serrilhado':w=>w.tp=='Cortante','pomo de impacto':w=>w.tp!='Contundente','ponta perfurante reforçada':w=>w.tp=='Perfurante','cabo alongado':w=>!w.ext,'quebra-cascos':w=>w.pes,'precisão mortal':w=>w.arr};
 var cols=document.querySelector('.cols'),ov=document.getElementById('ov'),fs=document.getElementById('fs'),fns=document.getElementById('fns'),fn=document.getElementById('fn'),fp=document.getElementById('fp'),fd=document.getElementById('fd'),dragging=false,mode='add',tgt=null;
 var CT='<span class="ctl"><button class="ib" data-a="e" title="Editar">✎</button><button class="ib" data-a="d" title="Excluir">✕</button></span>';
 var HD='<b class="grip" title="Arraste">⠿</b><span class="nm"></span><span class="pr"></span>'+CT;
@@ -22,7 +22,7 @@ var sel=null;
 var art=document.createElement('div');art.id='artwork';art.setAttribute('aria-hidden','true');document.body.appendChild(art);
 function ovr(m){try{var o=JSON.parse(m.dataset.man||'{}');return Array.isArray(o)?{}:o}catch(e){return{}}}
 function desel(){sel=null;sb.className='';delete document.body.dataset.sb;art.className='';document.querySelectorAll('.m.sel').forEach(x=>x.classList.remove('sel'))}
-function auto(m,w){var ti=m.closest('.sec').querySelector('.t').textContent.toLowerCase(),nm=m.querySelector('.nm').textContent.toLowerCase().trim();if(w.ar)return /armadura/.test(ti)&&ti.indexOf(AC[w.cat])>=0&&(!R[nm]||R[nm](w));return !/armadura/.test(ti)&&!/foco/.test(ti)&&(!/simples/.test(ti)||w.t=='S')&&(!/marciais/.test(ti)||w.t=='M')&&(!/dist/.test(ti)||w.r=='D')&&(!/corpo/.test(ti)||w.r=='C')&&(!R[nm]||R[nm](w))}
+function auto(m,w){var ti=m.closest('.sec').querySelector('.t').textContent.toLowerCase(),nm=m.querySelector('.nm').textContent.toLowerCase().trim(),sh=/escudo/.test(ti);if(w.ar)return (w.cat=='E'?sh:/armadura/.test(ti)&&ti.indexOf(AC[w.cat])>=0)&&(!R[nm]||R[nm](w));return !sh&&!/armadura/.test(ti)&&!/foco/.test(ti)&&(!/simples/.test(ti)||w.t=='S')&&(!/marciais/.test(ti)||w.t=='M')&&(!/dist/.test(ti)||w.r=='D')&&(!/corpo/.test(ti)||w.r=='C')&&(!R[nm]||R[nm](w))}
 function compat(m,w){var mn=ovr(m);return w.n in mn?!!mn[w.n]:auto(m,w)}
 var lastX=null;
 function show(m,keep){sel=m;document.querySelectorAll('.m.sel').forEach(x=>x.classList.remove('sel'));m.classList.add('sel');

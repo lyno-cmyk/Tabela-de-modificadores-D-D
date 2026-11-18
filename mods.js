@@ -1,4 +1,4 @@
-window.MODS_VERSION = 14;
+window.MODS_VERSION = 15;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -189,6 +189,41 @@ window.MODS = [
     "p": "300 po",
     "d": "**Fio Dissonante.** O gume emite uma nota inaudível que desfaz o raciocínio de conjuradores.\n\nQuando você acertar uma criatura que esteja **concentrada em uma magia**, ela sofre **+1d6 de dano de força** e realiza a salvaguarda de concentração com **Desvantagem**.\n\n* Esse efeito pode ocorrer uma vez por turno.",
     "a": true,
+    "k": {}
+   },
+   {
+    "n": "Quebra-cascos",
+    "p": "250 po",
+    "d": "**Golpe Esmagador.** Um golpe pesado o bastante para amassar elmos e rachar couraças.\n\nAo acertar um ataque com esta arma, você pode forçar o alvo a realizar uma **salvaguarda de Força (Atletismo)**. A CD é igual a **8 + seu bônus de proficiência + seu modificador de Força**.\n\nEm caso de falha, a **CA do alvo é reduzida em 3** por **2 rodadas**. O efeito não se acumula consigo mesmo.\n\n* Pode ser usado uma vez por turno.\n* Apenas para armas com a propriedade **Pesada**.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Lâmina vampírica",
+    "p": "450 po",
+    "d": "**Sede de Sangue.** O aço bebe o que corta e devolve a vida a quem o empunha.\n\nUma vez por turno, quando você acertar uma criatura viva com esta arma, ela sofre **+1d6 de dano necrótico** e você recupera pontos de vida iguais ao **dano necrótico causado**.\n\nSe o ataque reduzir a criatura a 0 pontos de vida, você ganha **2d6 pontos de vida temporários** por 1 minuto.\n\n* Não funciona contra constructos e mortos-vivos.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Golpe quebra-magia",
+    "p": "500 po",
+    "d": "**Lâmina Rompe-véu.** O gume é tecido para cortar o que as defesas arcanas tentam proteger.\n\nUma vez por descanso curto ou longo, você pode declarar este golpe **antes** de uma jogada de ataque. Contra esse ataque, o alvo **ignora todos os efeitos de magias protetivas**:\n\n- bônus de CA de magias (como **Escudo Arcano** e **Escudo da Fé**);\n- pontos de vida temporários concedidos por magias, como **Armadura de Agathys**: o dano vai direto aos pontos de vida reais, e você **não sofre** o dano de retaliação dela;\n- resistências e imunidades concedidas por magias.\n\nSe o ataque acertar, uma magia protetiva de **nível 3 ou inferior** que esteja sobre o alvo é encerrada.\n\n* Um Escudo Arcano conjurado como reação contra este ataque não tem efeito sobre ele.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Precisão mortal",
+    "p": "250 po",
+    "d": "**Arremesso Cirúrgico.** O peso e o equilíbrio da arma guiam o arremesso direto a um ponto fraco.\n\nDuas vezes por descanso curto ou longo, quando você acertar um **ataque de arremesso** com esta arma dentro do alcance normal, o alvo deve fazer uma **salvaguarda de Destreza** (CD igual a **8 + bônus de proficiência + modificador de Destreza**).\n\nEm caso de falha, o ataque é um **acerto crítico**.\n\n* Apenas para armas com a propriedade **Arremesso**.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Impacto catapulta",
+    "p": "300 po",
+    "d": "**Força Cinética.** A energia do golpe é transformada em impulso.\n\nUma vez por turno, antes de rolar o dano de um ataque com esta arma, você pode abrir mão de até **metade dos dados de dano** da arma (mínimo de 1 dado). Para cada dado abdicado, se o ataque acertar, o alvo é **arremessado 3 metros** em linha reta para longe de você.\n\nAlvos **Enormes ou maiores** são arremessados apenas pela metade da distância. Se o alvo colidir com um obstáculo sólido ou outra criatura, ambos sofrem **1d6 de dano contundente** por cada 3 metros de arremesso restantes, e o alvo fica **Caído**.\n\n* Sobre a distância arremessada, o alvo não provoca ataques de oportunidade.",
+    "a": false,
     "k": {}
    }
   ]
@@ -711,6 +746,39 @@ window.MODS = [
     "n": "Placas capacitoras",
     "p": "550 po",
     "d": "**Capacitor de Impacto.** Cristais ocos entre as placas convertem a energia de cada golpe recebido em carga arcana.\n\nUma vez por rodada, quando você sofrer dano de qualquer fonte, a armadura ganha **1 carga** (máximo de **3**). Ao acertar um ataque com arma, você pode gastar todas as cargas para causar **+1d6 de dano de força por carga**.\n\nAs cargas se dissipam ao fim do combate ou após 1 minuto.\n\n* Apenas para armaduras pesadas.",
+    "a": true,
+    "k": {}
+   }
+  ]
+ },
+ {
+  "t": "Escudos",
+  "m": [
+   {
+    "n": "Escudo extensível",
+    "p": "400 po",
+    "d": "**Barreira Telescópica.** Hastes articuladas no interior do escudo se abrem como um biombo de metal.\n\nCom uma **ação bônus**, você abre o escudo e escolhe uma **direção**. Surge uma barreira de **4,5 metros de largura** e **1,5 metro de altura**, centrada em você e voltada para a direção escolhida. Você e os aliados que estiverem **atrás da barreira** recebem os benefícios de **meia cobertura** (+2 na CA e em salvaguardas de Destreza) contra ataques e efeitos que venham do outro lado.\n\nEnquanto a barreira estiver aberta, seu deslocamento é reduzido em **3 metros**. Você pode usar uma ação bônus para recolhê-la ou mudar sua direção. Ela se recolhe sozinha se você ficar Incapacitado ou soltar o escudo.\n\n* A barreira não bloqueia movimento nem linha de visão, apenas projéteis, golpes e efeitos de área.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Escudo torre",
+    "p": "500 po",
+    "d": "**Muralha Portátil.** Uma placa quase tão alta quanto você, feita para sustentar linhas de batalha inteiras.\n\nO bônus de CA do escudo aumenta em **+1** (de +2 para +3).\n\nAlém disso, sempre que você sofrer dano **não mágico** de um ataque, o dano é reduzido em **3** (o valor médio de um **1d6**, aplicado de forma fixa). Isso vale para dano contundente, cortante e perfurante, mas não para dano de magias nem de armas mágicas.\n\n* Exige **Força 13**. Sem isso, seu deslocamento cai em 3 metros e você tem **Desvantagem** em testes de Furtividade e de Destreza (Acrobacia). O escudo pesa mais 3 kg.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Escudo com proteção arcana",
+    "p": "450 po",
+    "d": "**Égide de Força.** O escudo foi gravado com um padrão de abjuração que reconhece e absorve dardos de energia.\n\nEnquanto empunhar este escudo, você é **imune à magia Mísseis Mágicos** e a qualquer efeito que dispare dardos de força automáticos.\n\nCada dardo absorvido concede a você **2 pontos de vida temporários** (máximo de **10** ao mesmo tempo), que duram 1 minuto.\n\n* O escudo precisa estar empunhado e sintonizado com você. Não protege contra outras magias.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Escudo rúnico",
+    "p": "600 po",
+    "d": "**Runa Armazenada.** Uma runa gravada na face do escudo guarda uma magia e a dispara contra quem ousar atacar você.\n\nCom **1 minuto** de trabalho e gastando um espaço de magia, você imbui o escudo com **uma magia de 1º ou 2º nível** que tenha tempo de conjuração de 1 ação e que afete **uma única criatura**.\n\nSempre que uma criatura fizer uma **jogada de ataque contra você**, acertando ou não, a runa dispara a magia sobre ela, **sem gastar ação, reação ou espaço de magia**. Se a magia exigir salvaguarda, use sua **CD de magia** (ou 8 + bônus de proficiência + o modificador de atributo de conjuração usado na imbuição).\n\nDepois de disparada, a runa se apaga e o escudo só pode ser reimbuído em um **descanso longo**.\n\n* O escudo guarda uma magia por vez. Magias que exijam concentração não são mantidas após o disparo.",
     "a": true,
     "k": {}
    }

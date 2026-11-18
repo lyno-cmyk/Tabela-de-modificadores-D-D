@@ -179,3 +179,18 @@ body.qs .m{break-inside:avoid}
  #sb{width:min(calc(var(--fs)*38),48vw)}
  body[data-sb] .cols{margin-left:0;margin-right:auto;max-width:min(1000px,calc(100vw - min(var(--fs)*38,48vw) - 3*var(--pad) - 24px))}
 }
+
+
+/* ===== 2 colunas de modificadores no centro ===== */
+.cols{max-width:1240px;container-type:inline-size}
+.sec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;align-items:start}
+.sec>h2,.sec:not(:has(.m))::after{grid-column:1/-1}
+@container (max-width:560px){.sec{grid-template-columns:minmax(0,1fr)}}
+@media(min-width:701px){body[data-sb] .cols{max-width:min(1240px,calc(100vw - min(var(--fs)*38,48vw) - 3*var(--pad) - 24px))}}
+
+/* ===== Rodapé: o botão de busca fica dentro dele (não flutua mais) ===== */
+.ft{flex:none;justify-content:flex-start;min-height:calc(34px + 10px + 10px + 1px)}
+.ft #srch{position:relative;left:auto;top:auto;flex:none}
+.sp{bottom:calc(var(--pad)*.85 + 56px)}
+@media(max-height:560px){.ft{min-height:calc(34px + 6px + 6px + 1px)}.sp{bottom:calc(10px + 48px)}}
+@media(max-width:700px){.sp{bottom:calc(18px + 56px)}}

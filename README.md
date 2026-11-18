@@ -5,7 +5,7 @@ Página estática (sem build). Abre direto no navegador (`index.html`) ou via Gi
 ## Arquivos
 - `mods.js` — seções e modificações (edite pelo GitHub: ícone de lápis → Commit).
 - `weapons.js` — tabela de armas usada no painel lateral.
-- `armors.js` — tabela de armaduras (Leve, Média, Pesada e Escudo) usada no painel lateral. Os modificadores de armadura ficam nas seções "Armaduras leves/médias/pesadas" do `mods.js`; o título da seção define a categoria compatível.
+- `armors.js` — tabela de armaduras (Leve, Média, Pesada e Escudo) usada no painel lateral. Os modificadores de armadura ficam nas seções "Armaduras leves/médias/pesadas" e os de escudo na seção "Escudos" do `mods.js`; o título da seção define a categoria compatível.
 - `script.js`, `style.css`, `index.html` — código e visual.
 
 ## Publicar
@@ -21,5 +21,5 @@ Campos de cada modificação: `n` nome, `p` preço, `d` descrição (linha em br
 ## Navegação e busca
 - **Linhas recolhidas:** cada modificador aparece como uma linha só com o nome. Clique na linha (ou use Enter/Espaço com ela focada) para expandir preço, descrição e botões de editar/excluir; clique de novo para recolher. Só uma fica aberta por vez. Ao abrir, o painel lateral de armas e armaduras compatíveis aparece como antes; no celular ele abre pelo botão **Ver armas e armaduras compatíveis** dentro do cartão, para não cobrir o texto. Durante uma busca por texto, os resultados aparecem abertos (o trecho encontrado pode estar na descrição).
 - **Telas de vários tamanhos:** a fonte, o painel lateral e as margens escalam com a largura da tela. Em telas baixas (celular deitado) o cabeçalho encolhe para sobrar espaço para a lista.
-- **Lista rolável:** todos os modificadores ficam numa lista única e alta; role com a roda do mouse, o dedo ou as barras de rolagem (um modificador aberto nunca é cortado, por maior que seja). Ao arrastar um modificador até a borda de cima ou de baixo da lista, ela rola sozinha.
+- **Lista rolável:** os modificadores ficam em 2 colunas centralizadas (1 coluna quando falta espaço, como no celular ou com o painel lateral aberto em telas estreitas); role com a roda do mouse, o dedo ou as barras de rolagem (um modificador aberto nunca é cortado, por maior que seja). Ao arrastar um modificador até a borda de cima ou de baixo da lista, ela rola sozinha.
 - **Busca (🔍 no rodapé):** filtra por texto (nome, preço e descrição; ignora acentos e maiúsculas, todas as palavras precisam aparecer), por arcana/não arcana e por arma ou armadura compatível (digite parte do nome, ex.: `espada` ou `couro`; considera as regras automáticas e os ajustes manuais `k`). Os filtros se combinam. "Limpar" restaura tudo.

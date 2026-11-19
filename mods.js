@@ -1,4 +1,4 @@
-window.MODS_VERSION = 15;
+window.MODS_VERSION = 16;
 window.MODS = [
  {
   "t": "Armas simples corpo a corpo",
@@ -91,7 +91,36 @@ window.MODS = [
  },
  {
   "t": "Armas simples à distância",
-  "m": []
+  "m": [
+   {
+    "n": "Trajetória parabólica",
+    "p": "250 po",
+    "d": "O projétil sobe em arco alto e ganha força na descida.\nQuando você acertar um ataque contra um alvo além do alcance normal da arma, ele sofre dano extra do mesmo tipo da arma, conforme a distância:\n\nQuando você fizer um ataque a distância que ultrapasse o alcance normal da arma, você causa +1d8 bônus de dano da arma.\n\nA Desvantagem do ataque em alcance longo continua valendo.\n\n* Em armas de alcance curto, como o Dardo, o bônus aparece quase sempre. Em arcos e bestas ele exige que o alvo esteja bem longe.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Munição de aflição",
+    "p": "300 po",
+    "d": "As pontas são untadas com resinas e pós que atrapalham quem é atingido.\nUm número de vezes igual ao seu bônus de proficiência por descanso longo, quando acertar um ataque com esta arma, você pode forçar o alvo a fazer uma salvaguarda de Constituição. Em caso de falha, escolha um efeito que dura até o fim do seu próximo turno:\n\n**Ofuscado:** Desvantagem nas jogadas de ataque.\n\n**Entorpecido:** deslocamento reduzido pela metade e não pode usar reações.\n\n**Desorientado:** Desvantagem em testes de Sabedoria (Percepção) e em salvaguardas de concentração.\n\n* O alvo só sofre um desses efeitos por vez.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Corrente voltaica",
+    "p": "400 po",
+    "d": "O projétil crepita de eletricidade e procura outros condutores.\n**Uma vez por turno**, quando acertar um ataque com esta arma, o alvo sofre **+1d6 de dano elétrico**. A descarga salta para até duas outras criaturas à sua escolha a até **6 metros do alvo**, e cada uma faz uma **salvaguarda de Destreza dt 15**. Em caso de falha, sofre 1d6 de dano elétrico, ou metade disso em caso de sucesso.\n\n* Criaturas vestindo armadura de metal ou que estejam na água têm Desvantagem nessa salvaguarda.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Âncora de translocação",
+    "p": "450 po",
+    "d": "O projétil se prende ao ponto de impacto e vira um portal em miniatura.\nUma vez por descanso curto ou longo, em vez de atacar uma criatura, você pode disparar a arma contra um espaço desocupado, ou contra uma superfície sólida, dentro do alcance normal. O projétil se cravará ali por 1 minuto.\nDurante esse tempo, como ação bônus, você pode se teletransportar para um espaço desocupado adjacente ao projétil. Você pode levar consigo uma criatura voluntária a até **1,5 metro de você**. Depois disso, o projétil se desfaz.\n\n* A munição usada para ancorar não pode ser recuperada.",
+    "a": true,
+    "k": {}
+   }
+  ]
  },
  {
   "t": "Armas marciais corpo a corpo",
@@ -206,6 +235,13 @@ window.MODS = [
     "k": {}
    },
    {
+    "n": "Impacto catapulta",
+    "p": "300 po",
+    "d": "**Força Cinética.** A energia do golpe é transformada em impulso.\n\nUma vez por turno, antes de rolar o dano de um ataque com esta arma, você pode abrir mão de até **metade dos dados de dano** da arma (mínimo de 1 dado). Para cada dado abdicado, se o ataque acertar, o alvo é **arremessado 3 metros** em linha reta para longe de você.\n\nAlvos **Enormes ou maiores** são arremessados apenas pela metade da distância. Se o alvo colidir com um obstáculo sólido ou outra criatura, ambos sofrem **1d6 de dano contundente** por cada 3 metros de arremesso restantes, e o alvo fica **Caído**.\n\n* Sobre a distância arremessada, o alvo não provoca ataques de oportunidade.",
+    "a": false,
+    "k": {}
+   },
+   {
     "n": "Golpe quebra-magia",
     "p": "500 po",
     "d": "**Lâmina Rompe-véu.** O gume é tecido para cortar o que as defesas arcanas tentam proteger.\n\nUma vez por descanso curto ou longo, você pode declarar este golpe **antes** de uma jogada de ataque. Contra esse ataque, o alvo **ignora todos os efeitos de magias protetivas**:\n\n- bônus de CA de magias (como **Escudo Arcano** e **Escudo da Fé**);\n- pontos de vida temporários concedidos por magias, como **Armadura de Agathys**: o dano vai direto aos pontos de vida reais, e você **não sofre** o dano de retaliação dela;\n- resistências e imunidades concedidas por magias.\n\nSe o ataque acertar, uma magia protetiva de **nível 3 ou inferior** que esteja sobre o alvo é encerrada.\n\n* Um Escudo Arcano conjurado como reação contra este ataque não tem efeito sobre ele.",
@@ -216,13 +252,6 @@ window.MODS = [
     "n": "Precisão mortal",
     "p": "250 po",
     "d": "**Arremesso Cirúrgico.** O peso e o equilíbrio da arma guiam o arremesso direto a um ponto fraco.\n\nDuas vezes por descanso curto ou longo, quando você acertar um **ataque de arremesso** com esta arma dentro do alcance normal, o alvo deve fazer uma **salvaguarda de Destreza** (CD igual a **8 + bônus de proficiência + modificador de Destreza**).\n\nEm caso de falha, o ataque é um **acerto crítico**.\n\n* Apenas para armas com a propriedade **Arremesso**.",
-    "a": false,
-    "k": {}
-   },
-   {
-    "n": "Impacto catapulta",
-    "p": "300 po",
-    "d": "**Força Cinética.** A energia do golpe é transformada em impulso.\n\nUma vez por turno, antes de rolar o dano de um ataque com esta arma, você pode abrir mão de até **metade dos dados de dano** da arma (mínimo de 1 dado). Para cada dado abdicado, se o ataque acertar, o alvo é **arremessado 3 metros** em linha reta para longe de você.\n\nAlvos **Enormes ou maiores** são arremessados apenas pela metade da distância. Se o alvo colidir com um obstáculo sólido ou outra criatura, ambos sofrem **1d6 de dano contundente** por cada 3 metros de arremesso restantes, e o alvo fica **Caído**.\n\n* Sobre a distância arremessada, o alvo não provoca ataques de oportunidade.",
     "a": false,
     "k": {}
    }
@@ -251,6 +280,15 @@ window.MODS = [
     }
    },
    {
+    "n": "Coronha reforçada / Limbo reforçado",
+    "p": "150 po",
+    "d": "Reforços metálicos na coronha ou nas pontas do arco permitem lutar de perto sem largar a arma.\n\nVocê não sofre **Desvantagem** em ataques à distância com esta arma contra criaturas a até 1,5 metro.\n\nAlém disso, uma vez por turno, quando uma criatura entrar em um espaço a até **1,5 metro** de você, você pode usar sua reação para golpeá-la, causando **1d4 de dano contundente + seu modificador de Força ou Destreza (o maior)**. Se ela for de tamanho Grande ou menor, deve realizar uma salvaguarda de Força (CD = 8 + seu bônus de proficiência + seu modificador de Força ou Destreza, o maior) ou será empurrada **1,5 metro**.\n\n* Não pode ser aplicada a zarabatanas.",
+    "a": false,
+    "k": {
+     "Zarabatana": false
+    }
+   },
+   {
     "n": "Disparo Ricocheteante",
     "p": "200 po",
     "d": "Sempre que o resultado da rolagem de dano da arma for par, o disparo ricocheteia uma vez em direção a outro inimigo próximo do alvo inicial, desde que esteja a até **6 metros** dele. O ricochete realiza uma nova jogada de ataque, sem adicionar seu bônus de proficiência.\n\nO ricochete só acontece uma vez por turno.\n\n* O ricochete não causa dano de ataque furtivo.",
@@ -265,15 +303,6 @@ window.MODS = [
     "d": "A arma é imbuída com um espírito musical de rock pesado, que reage ao ritmo da música durante o combate.\n\nSempre que houver uma batida pesada soando nas proximidades da arma, antes de realizar um ataque, você deve rolar **3d6** para determinar o efeito desencadeado.\n\n- Sequência: Caso obtenha três números consecutivos diferentes (por exemplo: 1, 2 e 3), você dilacera seus inimigos no ritmo da música, realizando **um ataque adicional**. Esse ataque não adiciona seu modificador de atributo à rolagem de dano.\n\n- Dois números iguais: Caso obtenha exatamente dois resultados iguais, seu ataque causa **+1d10 de dano de fogo** adicional e deixa o alvo em **Combustão** por 2 turnos.\n\n- Três números iguais: Caso obtenha três resultados iguais, você sincroniza seu ataque com uma batida forte da música, causando **3d6 de dano trovejante** ao alvo. Ele também deve realizar uma salvaguarda de Destreza (CD 10 + seu nível de Bardo). Em caso de falha, é arremessado a **4,5 metros** para longe de você e fica **Caído**.",
     "a": true,
     "k": {}
-   },
-   {
-    "n": "Coronha reforçada / Limbo reforçado",
-    "p": "150 po",
-    "d": "Reforços metálicos na coronha ou nas pontas do arco permitem lutar de perto sem largar a arma.\n\nVocê não sofre **Desvantagem** em ataques à distância com esta arma contra criaturas a até 1,5 metro.\n\nAlém disso, uma vez por turno, quando uma criatura entrar em um espaço a até **1,5 metro** de você, você pode usar sua reação para golpeá-la, causando **1d4 de dano contundente + seu modificador de Força ou Destreza (o maior)**. Se ela for de tamanho Grande ou menor, deve realizar uma salvaguarda de Força (CD = 8 + seu bônus de proficiência + seu modificador de Força ou Destreza, o maior) ou será empurrada **1,5 metro**.\n\n* Não pode ser aplicada a zarabatanas.",
-    "a": false,
-    "k": {
-     "Zarabatana": false
-    }
    },
    {
     "n": "Salto de disparo",
@@ -292,13 +321,6 @@ window.MODS = [
     "p": "25 po",
     "d": "Essa modificação dura até o fim de um combate.\n\nConcede +1 nas jogadas de ataque e nas rolagens de dano.\n\n* Leva um minuto para fazer isso",
     "a": false,
-    "k": {}
-   },
-   {
-    "n": "Arma Chrono",
-    "p": "700 po",
-    "d": "Muda o tipo de Dado da Arma para CdX\n(1d6 -> Cd6, 1d8 -> Cd8, 1d10 -> Cd10)\n\nAo tirar o Valor Máximo no dado CdX o Tier do Dado aumenta.\n(1d6 -> Rola o Dado -> 6 -> Aumento no Tier -> 1d8 (Dano Novo da Arma)\nAo tirar o Valor Mínimo o Inverso acontece.\n(1d6 -> 1 -> 1d4)\n\nPorém ao chegar em 12 no Cd12 o dado vira D20, e ao tirar 20...\n\nAo sair de combate ou atingir um dos extremos, o dado base da arma volta ao normal.\n\nAlgo de especial acontece ao chegar em 20 ou 1 dependendo do Extremo atingido.",
-    "a": true,
     "k": {}
    },
    {
@@ -358,9 +380,30 @@ window.MODS = [
     "k": {}
    },
    {
+    "n": "Golpe sinalizador",
+    "p": "150 po",
+    "d": "Um símbolo pintado na lâmina deixa uma marca clara no inimigo, guiando o ataque dos seus aliados.\n\nUma vez por turno, quando você acertar um ataque com esta arma, o alvo fica **marcado** até o início do seu próximo turno. O primeiro aliado que realizar uma jogada de ataque contra a criatura marcada recebe **+1d4** nessa jogada.\n\n* A marca não se acumula.",
+    "a": false,
+    "k": {}
+   },
+   {
+    "n": "Ceifa ampla",
+    "p": "350 po",
+    "d": "Você gira o corpo inteiro e varre a arma numa curva, em vez de acertar um alvo só.\n\nQuando você realizar a ação Atacar com esta arma, pode abrir mão de todos os seus ataques dessa ação (incluindo os de Ataque Extra) para fazer um único ataque em área. Ele atinge todas as criaturas em um arco de 3 metros à sua frente, ou dentro do alcance da arma, o que for maior.\n\nFaça uma jogada de ataque e compare o resultado com a CA de cada criatura no arco. O dano é rolado uma única vez e aplicado a todas as criaturas atingidas. Cada criatura que você acertar sofre o dano da arma normalmente, incluindo seu modificador de atributo.\n\nSe o ataque for um acerto crítico contra uma criatura, só ela sofre o dano crítico. As outras sofrem o dano normal.\n\n* Apenas para armas com a propriedade Pesada.",
+    "a": false,
+    "k": {}
+   },
+   {
     "n": "impaciência",
     "p": "200 po",
     "d": "**Espírito Impaciente.**\nUma arma imbuída com um espírito incapaz de tolerar fracassos.\n\nImpaciência: Toda vez que você **errar** um ataque com esta arma, ela acumula energia, concedendo **+1d8 de dano energético e +1 na próxima jogada de ataque** realizada com ela. Os bônus são cumulativos até no máximo de 2.\n\nA última gota: Caso você erre **3 ataques consecutivos** com esta arma, ela se solta da sua mão e persegue o alvo a até 18 metros, realizando um ataque descarregando toda a energia acumulada em uma explosão. Todas as criaturas a até **1,5 metro do alvo** devem realizar uma **salvaguarda de Destreza (CD 14).** Em caso de falha, sofrem 5d8 de dano energético.\n\n* Os acúmulos são gastos após acertar um ataque.",
+    "a": true,
+    "k": {}
+   },
+   {
+    "n": "Arma Chrono",
+    "p": "700 po",
+    "d": "Muda o tipo de Dado da Arma para CdX\n(1d6 -> Cd6, 1d8 -> Cd8, 1d10 -> Cd10)\n\nAo tirar o Valor Máximo no dado CdX o Tier do Dado aumenta.\n(1d6 -> Rola o Dado -> 6 -> Aumento no Tier -> 1d8 (Dano Novo da Arma)\nAo tirar o Valor Mínimo o Inverso acontece.\n(1d6 -> 1 -> 1d4)\n\nPorém ao chegar em 12 no Cd12 o dado vira D20, e ao tirar 20...\n\nAo sair de combate ou atingir um dos extremos, o dado base da arma volta ao normal.\n\nAlgo de especial acontece ao chegar em 20 ou 1 dependendo do Extremo atingido.",
     "a": true,
     "k": {}
    },
@@ -455,13 +498,6 @@ window.MODS = [
     "p": "400 po",
     "d": "A arma é imbuída com as escamas de um dragão roxo.\n\nAo errar um ataque cuja jogada seja 5 ou menos, role **1d4**. Caso obtenha um resultado 4, você pode repetir a jogada de ataque com **vantagem**.",
     "a": true,
-    "k": {}
-   },
-   {
-    "n": "Golpe sinalizador",
-    "p": "150 po",
-    "d": "Um símbolo pintado na lâmina deixa uma marca clara no inimigo, guiando o ataque dos seus aliados.\n\nUma vez por turno, quando você acertar um ataque com esta arma, o alvo fica **marcado** até o início do seu próximo turno. O primeiro aliado que realizar uma jogada de ataque contra a criatura marcada recebe **+1d4** nessa jogada.\n\n* A marca não se acumula.",
-    "a": false,
     "k": {}
    },
    {
